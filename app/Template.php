@@ -23,7 +23,7 @@ class Template extends SleepingOwlModel
 		
 		$i = 0;
 		foreach($templates as $li){
-			$value[$i] = $li->name;
+			$value[$i] = $li->site_id . '-' . $li->name;
 			$key[$i] = $li->id;
 			$i++;
 		}

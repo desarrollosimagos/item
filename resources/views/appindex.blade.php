@@ -1,130 +1,125 @@
 <!DOCTYPE html>
-<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
-<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<html>
 	<head>
 
 		<!-- Basic -->
 		<meta charset="utf-8">
-		<title>Porto - Responsive HTML5 Template - shared on themelock.com</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		@yield('title_site')
+
 		<meta name="keywords" content="HTML5 Template" />
 		<meta name="description" content="Porto - Responsive HTML5 Template">
-		<meta name="author" content="Crivos.com">
+		<meta name="author" content="okler.net">
+
+		<!-- Favicon -->
+		@yield('site_favicon')
+		
 
 		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- Web Fonts  -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
 
-		<!-- Libs CSS -->
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/fonts/font-awesome/css/font-awesome.css">
-		<link rel="stylesheet" href="vendor/flexslider/flexslider.css" media="screen" />
-		<link rel="stylesheet" href="vendor/fancybox/jquery.fancybox.css" media="screen" />
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="vendor/animate/animate.min.css">
+		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="css/theme.css">
 		<link rel="stylesheet" href="css/theme-elements.css">
+		<link rel="stylesheet" href="css/theme-blog.css">
+		<link rel="stylesheet" href="css/theme-shop.css">
 
-		<!-- Current Page Styles -->
-		<link rel="stylesheet" href="vendor/revolution-slider/css/settings.css" media="screen" />
-		<link rel="stylesheet" href="vendor/revolution-slider/css/captions.css" media="screen" />
-		<link rel="stylesheet" href="vendor/circle-flip-slideshow/css/component.css" media="screen" />
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css">
+		<link rel="stylesheet" href="vendor/circle-flip-slideshow/css/component.css">
 
-		<!-- Custom CSS -->
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/default.css">
+
+		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="css/custom.css">
 
-		<!-- Skin -->
-		<link rel="stylesheet" href="css/skins/blue.css">
-		
-		<!-- Responsive CSS -->
-		<link rel="stylesheet" href="css/bootstrap-responsive.css" />
-		<link rel="stylesheet" href="css/theme-responsive.css" />
-
-		<!-- Favicons -->
-		<link rel="shortcut icon" href="img/favicon.ico">
-		<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
-
 		<!-- Head Libs -->
-		<script src="vendor/modernizr.js"></script>
-
-		<!--[if IE]>
-			<link rel="stylesheet" href="css/ie.css">
-		<![endif]-->
-
-		<!--[if lte IE 8]>
-			<script src="vendor/respond.js"></script>
-		<![endif]-->
-
-		<!-- Facebook OpenGraph Tags - Go to http://developers.facebook.com/ for more information.
-		<meta property="og:title" content="Porto Website Template."/>
-		<meta property="og:type" content="website"/>
-		<meta property="og:url" content="http://www.crivos.com/themes/porto"/>
-		<meta property="og:image" content="http://www.crivos.com/themes/porto/"/>
-		<meta property="og:site_name" content="Porto"/>
-		<meta property="fb:app_id" content=""/>
-		<meta property="og:description" content="Porto - Responsive HTML5 Template"/>
-		-->
+		<script src="vendor/modernizr/modernizr.min.js"></script>
 
 	</head>
 	<body>
-
 		<div class="body">
-			<header>
-				<div class="container">
-					<h1 class="logo">
-						<a href="index">
-							<img alt="Porto" src="img/logo-item.png">
-						</a>
-					</h1>
-					<div class="search">
-						<form class="form-search" id="searchForm" action="page-search-results.html" method="get">
-							<div class="control-group">
-								<input type="text" class="input-medium search-query" name="q" id="q" placeholder="Search...">
-								<button class="search" type="submit"><i class="icon-search"></i></button>
+			<header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 57, 'stickySetTop': '-57px', 'stickyChangeLogo': true}">
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-logo">
+									@yield('logo_site')
+								</div>
 							</div>
-						</form>
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-search hidden-xs">
+										<form id="searchForm" action="page-search-results.html" method="get">
+											<div class="input-group">
+												<input type="text" class="form-control" name="q" id="q" placeholder="Search..." required>
+												<span class="input-group-btn">
+													<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+												</span>
+											</div>
+										</form>
+									</div>
+									<nav class="header-nav-top">
+										@yield('top_menu')
+									</nav>
+								</div>
+								<div class="header-row">
+									<div class="header-nav">
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+											<i class="fa fa-bars"></i>
+										</button>
+										@yield('social_menu')
+										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+											<nav>
+												@yield('main_menu')
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<nav>
-						@yield('top_menu')
-					</nav>
-					<div class="social-icons">
-						@yield('social_menu')
-					</div>
-					<nav>
-						@yield('main_menu')
-					</nav>
 				</div>
 			</header>
 
 			<div role="main" class="main">
-
 				@yield('content')
-
 			</div>
-
-			<footer>
+ 
+			<footer id="footer">
 				<div class="container">
 					<div class="row">
-						<div class="footer-ribon">
+						<div class="footer-ribbon">
 							@yield('footer_title')
 						</div>
-						<div class="span3">
+						<div class="col-md-3">
 							@yield('footer_panel_one')
 						</div>
-						<div class="span3">
+						<div class="col-md-3">
 							@yield('footer_panel_two')
 						</div>
-						<div class="span4">
-							@yield('footer_panel_three')
+						<div class="col-md-4">
+							@yield('footer_panel_tree')
 						</div>
-						<div class="span2">
+						<div class="col-md-2">
 							@yield('footer_panel_four')
-							
 						</div>
 					</div>
 				</div>
@@ -136,43 +131,48 @@
 			</footer>
 		</div>
 
-		<!-- Libs -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="vendor/jquery.js"><\/script>')</script>
-		<script src="vendor/jquery.easing.js"></script>
-		<script src="vendor/jquery.cookie.js"></script>
-		<!-- <script src="master/style-switcher/style.switcher.js"></script> -->
-		<script src="vendor/bootstrap.js"></script>
-		<script src="vendor/selectnav.js"></script>
-		<script src="vendor/twitterjs/twitter.js"></script>
-		<script src="vendor/flexslider/jquery.flexslider.js"></script>
-		<script src="vendor/jflickrfeed/jflickrfeed.js"></script>
-		<script src="vendor/fancybox/jquery.fancybox.js"></script>
-		<script src="vendor/jquery.validate.js"></script>
-
-		<script src="js/plugins.js"></script>
-
-		<!-- Page Scripts -->
-
-		<!-- Theme Initializer -->
+		<!-- Vendor -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
+		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+		<script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/common/common.min.js"></script>
+		<script src="vendor/jquery.validation/jquery.validation.min.js"></script>
+		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
+		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+		<script src="vendor/isotope/jquery.isotope.min.js"></script>
+		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="vendor/vide/vide.min.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
-
-		<!-- Custom JS -->
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="vendor/circle-flip-slideshow/js/jquery.flipshow.min.js"></script>
+		<script src="js/views/view.home.js"></script>
+		
+		<!-- Theme Custom -->
 		<script src="js/custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script>
 
-		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
-		<!--
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
 		<script>
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
-			_gaq.push(['_trackPageview']);
-
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
 		</script>
-		-->
+		 -->
+
 	</body>
 </html>

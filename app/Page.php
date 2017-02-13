@@ -22,7 +22,7 @@ class Page extends SleepingOwlModel
 		
 		$i = 0;
 		foreach($pages as $li){
-			$value[$i] = $li->name;
+			$value[$i] = $li->site_id . '-' . $li->site_id . '-' . $li->name;
 			$key[$i] = $li->id;
 			$i++;
 		}

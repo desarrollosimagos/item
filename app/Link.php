@@ -18,7 +18,7 @@ class Link extends SleepingOwlModel
 		
 		$i = 0;
 		foreach($links as $li){
-			$value[$i] = $li->label;
+			$value[$i] = $li->id .'-'. $li->label;
 			$key[$i] = $li->id;
 			$i++;
 		}

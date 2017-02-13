@@ -17,6 +17,7 @@ Admin::model(\App\Link::class)
 	->columns(function ()
 {
 	// Describing columns for table view
+	Column::string('id', 'Id');
 	Column::string('label', 'Label');
 	Column::string('menu_id', 'Menu Top');
 	Column::string('order', 'Order');

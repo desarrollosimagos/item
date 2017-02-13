@@ -18,4 +18,22 @@ Route::get('/', function () {
 
 
 //Route::get('/', 'MainController@index');
-Route::get('/{pages?}', 'MainController@page');
+
+
+Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/{pages?}', 'MainController@page');
+	
+	Route::get('/{pages?}/{id?}', 'MainController@view');
+	
+	//Route::get('/{pages?}/{page?}', 'MainController@page');
+
+    Route::get('lang/lang/{lang}', function ($lang) {
+        session(['lang' => $lang]);
+        return \Redirect::back();
+    })->where([
+        'lang' => 'pt|es|en'
+    ]);
+
+});
+
