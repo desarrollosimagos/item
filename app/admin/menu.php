@@ -47,3 +47,8 @@ Admin::menu()->label('Portofolio')->icon('fa-book')->items(function ()
 	Admin::menu(\App\Metaportofolio::class)->icon('fa-user')->label('Fields for Portofolio');
 	Admin::menu(\App\Imagesportofolio::class)->icon('fa-user')->label('Images for Portofolio');
 });
+
+Admin::menu()->label('Customer')->icon('fa-book')->items(function ()
+{
+    Admin::menu(\App\Customer::class)->icon('fa-user')->label('Customers');
+});
