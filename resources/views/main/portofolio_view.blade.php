@@ -121,9 +121,98 @@
 						</div>
 					</div>
 					
+<<<<<<< HEAD
 					@foreach ($meta_portofolio as $key => $meta)
 						- {!! $meta->name !!} <br>
 					@endforeach
+=======
+					<div class="row"> 
+						<div class="col-md-12">
+							<div class="portfolio-info pull-left"> 
+								<div class="row"> 
+									<div class="col-md-12 center"> 
+										<ul> <li> <a href="#" data-tooltip data-original-title="Like"><i class="fa fa-heart"></i>14</a> </li> <li> <i class="fa fa-calendar"></i> 01 January 2016 </li> <li> <i class="fa fa-tags"></i> <a href="#">Brand</a>, <a href="#">Design</a> </li> </ul> 
+									</div> 
+								</div> 
+							</div>
+						</div> 
+					</div>
+					
+					
+					<div class="row"> 
+						<div class="col-md-7">
+							@foreach ($meta_portofolio as $key => $meta)
+								@if ($meta->value != NULL)
+									@if ($meta->group == 'meta.view')
+										<h5 class="mt-lg mb-sm">
+										<!--@foreach(explode('.', $meta->name) as $name)
+											@if ($name != 'main')
+												{{$name}}
+											@endif
+										@endforeach-->
+										{{trans($meta->name)}}
+										</h5>
+										<p class="mt-none mb-xlg">
+										{{$meta->value}} 
+										</p>
+									@endif
+								@endif
+							@endforeach
+							
+							<div class="row mb-xlg">
+								<div class="counters counters-sm">
+									<h5 class="mt-lg mb-sm">
+									Figures
+									</h5>
+									@foreach ($meta_portofolio as $key => $meta)
+										@if ($meta->value != NULL)
+											@if ($meta->group == 'meta.view.number')
+												<div class="col-md-3 col-sm-6">
+													<div class="counter">
+														<strong data-to="{{$meta->value}}">0</strong>
+														<label>
+														<!--@foreach(explode('.', $meta->name) as $name)
+															@if ($name != 'main')
+																{{$name}}
+															@endif
+														@endforeach-->
+														{{trans($meta->name)}}
+														</label>
+													</div>
+												</div>
+											@endif
+										@endif
+									@endforeach
+								</div>
+							</div>
+							
+						</div>
+						
+						<div class="col-md-5">
+							@foreach ($meta_portofolio as $key => $meta)
+								@if ($meta->value != NULL)
+									@if ($meta->group == 'meta.view.right')
+									<ul class="portfolio-details mt-none mb-xl"> 
+										<li> 
+											<h5 class="mt-lg mb-sm">
+											<!--@foreach(explode('.', $meta->name) as $name)
+												@if ($name != 'main')
+													{{$name}}
+												@endif
+											@endforeach-->
+											{{trans($meta->name)}}
+											</h5>
+											<p>{{$meta->value}}</p>
+										</li> 
+									</ul>
+									@endif
+								@endif
+							@endforeach
+						</div> 
+					</div>
+				
+					
+>>>>>>> 111b311aee0737cb5d765c9186440edf81ef4da0
 				</div>
 @endsection
 
