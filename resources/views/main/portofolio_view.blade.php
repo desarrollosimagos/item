@@ -122,7 +122,7 @@
 					</div>
 					
 					@foreach ($meta_portofolio as $key => $meta)
-						{!! $meta->value !!}
+						- {!! $meta->name !!} <br>
 					@endforeach
 				</div>
 @endsection
