@@ -120,12 +120,6 @@
 
 						</div>
 					</div>
-					
-<<<<<<< HEAD
-					@foreach ($meta_portofolio as $key => $meta)
-						- {!! $meta->name !!} <br>
-					@endforeach
-=======
 					<div class="row"> 
 						<div class="col-md-12">
 							<div class="portfolio-info pull-left"> 
@@ -210,9 +204,6 @@
 							@endforeach
 						</div> 
 					</div>
-				
-					
->>>>>>> 111b311aee0737cb5d765c9186440edf81ef4da0
 				</div>
 @endsection
 
