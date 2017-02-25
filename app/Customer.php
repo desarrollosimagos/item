@@ -13,7 +13,7 @@ class Customer extends SleepingOwlModel implements ModelWithImageFieldsInterface
     //
 	protected $table = 'customers';
 	
-	protected $fillable = ['customer','file', 'date','url'];
+	protected $fillable = ['customer','file', 'date','url','site_id'];
 	
 	public function getImageFields()
     {

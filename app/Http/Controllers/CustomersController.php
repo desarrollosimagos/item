@@ -11,7 +11,34 @@ use App\Page;
 
 
 class CustomersController extends Controller
-{	
+{
+	public function customers_json($pages=null){
+        $host= $_SERVER["HTTP_HOST"];
+		$site = $host;
+		$tmp = NULL;
+		if($pages==null){
+			$pages='index';
+		}
+		
+		$site_info = DB::table('sites')
+			->where('domain',$site)
+            ->first();
+		
+		if(!$site_info->status)
+			$pages='maintenance';
+		
+		$page_info = DB::table('pages')	
+			->where('pages.site_id', $site_info->id)
+            ->first();
+
+		$customers = DB::table('customers')
+			->distinct()
+			->select('*')
+			->where('customers.site_id', $site_info->id)
+			->get();
+
+        return response()->json($customers);
+    }	
 	
 	public function page($pages = null){
 		$host= $_SERVER["HTTP_HOST"];
