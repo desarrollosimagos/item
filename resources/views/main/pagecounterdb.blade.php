@@ -1,4 +1,4 @@
-@extends('app_portafolio')
+@extends('appindex_counter_db')
 
 
 @section('site_favicon')
@@ -12,7 +12,7 @@
 @endsection
 
 @section('logo_site')
-						<a href="/index">
+						<a href="index">
 							<img alt="Porto" height="54" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="{{ url('images/site/'.$image_sites['logo-header']) }}">
 						</a>			
 @endsection						
@@ -43,11 +43,11 @@
 								@else
 									<li class="dropdown">
 								@endif
-									<a href="/{{ $lnk->route }}">{{ trans($lnk->label) }} </a>
+									<a href="{{ $lnk->route }}">{{ trans($lnk->label) }} </a>
 									@if (isset($submenu[$lnk->id]))
 										<ul class="dropdown-menu">
 											@foreach ($submenu[$lnk->id] as $key => $sub)
-												<li class="dropdown-submenu"><a href="/{{ $sub['route'] }}">{{ trans($sub['label']) }}</a></li>
+												<li class="dropdown-submenu"><a href="{{ $sub['route'] }}">{{ trans($sub['label']) }}</a></li>
 											@endforeach
 										</ul>
 									@endif
@@ -62,155 +62,25 @@
 						<div class="row">
 							<div class="col-md-12">
 								<ul class="breadcrumb">
-									<li><a href="/index">Inicio</a></li>
+									<li><a href="index">Inicio</a></li>
 									@if ($dir <> "")
-										<li><a href="/portofolio">{{$dir}}</a></li>
-										<li class="active">View</li>
+										<li class="active">{{$dir}}</li>
 									@endif
 								</ul>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<h1>{{$portofolios->title}}</h1>
+								<h1>{{$title}}</h1>
 							</div>
 						</div>
 					</div>
 				</section>
-
+				
 				<div class="container">
-
-					<div class="row">
-						<div class="col-md-12">
-							<div class="portfolio-title">
-								<div class="row">
-									<div class="portfolio-nav-all col-md-1">
-										<a href="/portofolio" data-tooltip data-original-title="Back to list"><i class="fa fa-th"></i></a>
-									</div>
-									<div class="col-md-10 center">
-										<h2 class="mb-none">{{ $portofolios->title }}</h2>
-									</div>
-									<div class="portfolio-nav col-md-1">
-										@if ($next != NULL)
-										<a href="/portofolio/{{ $next->id }}" class="portfolio-nav-prev" data-tooltip data-original-title="Previous"><i class="fa fa-chevron-left"></i></a>
-										@endif
-										@if ($prev != NULL)
-										<a href="/portofolio/{{ $prev->id }}" class="portfolio-nav-next" data-tooltip data-original-title="Next"><i class="fa fa-chevron-right"></i></a>
-										@endif
-									</div>
-								</div>
-							</div>
-
-							<hr class="tall">
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-12">
-
-							<div class="owl-carousel owl-theme show-nav-hover mt-none" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': true, 'animateOut': 'fadeOut'}">
-								@foreach ($image_portofolio as $key => $image)
-								<div>
-									<span class="img-thumbnail">
-										<img alt="" class="img-responsive" src="/images/images/{{ $image->file }}">
-									</span>
-								</div>
-								@endforeach
-							</div>
-
-						</div>
-					</div>
-					<div class="row"> 
-						<div class="col-md-12">
-							<div class="portfolio-info pull-left"> 
-								<div class="row"> 
-									<div class="col-md-12 center"> 
-										<ul> <li> <a href="#" data-tooltip data-original-title="Like"><i class="fa fa-heart"></i>14</a> </li> <li> <i class="fa fa-calendar"></i> 01 January 2016 </li> <li> <i class="fa fa-tags"></i> <a href="#">Brand</a>, <a href="#">Design</a> </li> </ul> 
-									</div> 
-								</div> 
-							</div>
-						</div> 
-					</div>
-					
-					
-					<div class="row"> 
-						<div class="col-md-7">
-							@foreach ($meta_portofolio as $key => $meta)
-								@if ($meta->value != NULL)
-									@if ($meta->group == 'meta.view')
-										<h5 class="mt-lg mb-sm">
-										<!--@foreach(explode('.', $meta->name) as $name)
-											@if ($name != 'main')
-												{{$name}}
-											@endif
-										@endforeach-->
-										{{trans($meta->name)}}
-										</h5>
-										<p class="mt-none mb-xlg">
-										{{$meta->value}} 
-										</p>
-									@endif
-								@endif
-							@endforeach
-							
-							<div class="row mb-xlg">
-								<div class="counters counters-sm">
-									<h5 class="mt-lg mb-sm">
-									Figures
-									</h5>
-									@foreach ($meta_portofolio as $key => $meta)
-										@if ($meta->value != NULL)
-											@if ($meta->group == 'meta.view.number')
-												<div class="col-md-3 col-sm-6">
-													<div class="counter">
-														<strong data-to="
-														@foreach(explode(' ', $meta->value) as $key => $value)
-															@if ($key == 0)
-																{{$value}}
-															@endif
-														@endforeach
-														">0</strong>
-														<label>
-														<!--@foreach(explode('.', $meta->name) as $name)
-															@if ($name != 'main')
-																{{$name}}
-															@endif
-														@endforeach-->
-														{{trans($meta->name)}}
-														</label>
-													</div>
-												</div>
-											@endif
-										@endif
-									@endforeach
-								</div>
-							</div>
-							
-						</div>
-						
-						<div class="col-md-5">
-							@foreach ($meta_portofolio as $key => $meta)
-								@if ($meta->value != NULL)
-									@if ($meta->group == 'meta.view.right')
-									<ul class="portfolio-details mt-none mb-xl"> 
-										<li> 
-											<h5 class="mt-lg mb-sm">
-											<!--@foreach(explode('.', $meta->name) as $name)
-												@if ($name != 'main')
-													{{$name}}
-												@endif
-											@endforeach-->
-											{{trans($meta->name)}}
-											</h5>
-											<p>{{$meta->value}}</p>
-										</li> 
-									</ul>
-									@endif
-								@endif
-							@endforeach
-						</div> 
-					</div>
-					
+					@foreach ($content as $key => $cont)
+						{!! $cont->content !!}
+					@endforeach
 				</div>
 @endsection
 
