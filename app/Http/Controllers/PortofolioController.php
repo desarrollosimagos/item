@@ -46,4 +46,32 @@ class PortofolioController extends Controller
 
         return response()->json($portofolios);
     }
+
+	public function number_json($pages=null){
+        $host= $_SERVER["HTTP_HOST"];
+		$site = $host;
+		$tmp = NULL;
+		if($pages==null){
+			$pages='index';
+		}
+		
+		$site_info = DB::table('sites')
+			->where('domain',$site)
+            ->first();
+		
+		if(!$site_info->status)
+			$pages='maintenance';
+		
+		$page_info = DB::table('pages')	
+			->where('pages.site_id', $site_info->id)
+            ->first();
+
+		$portofolios = DB::table('portofolios')
+			->distinct()
+			->join('categories','categories.id','=','portofolios.categorie_id')
+			->count();
+
+        return response()->json($portofolios);
+    }
+	
 }
