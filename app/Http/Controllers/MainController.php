@@ -74,6 +74,7 @@ class MainController extends Controller
 			->join('sections','links.section_id','=','sections.id')
 			->where('sections.template_id',$page_info->template_id)
 			->where('menu_id',NULL)
+			->orderBy('links.order', 'asc')
 			->get();
 		
 		$main_submenu = DB::table('links')
@@ -82,6 +83,7 @@ class MainController extends Controller
 			->join('sections','links.section_id','=','sections.id')
 			->where('sections.template_id',$page_info->template_id)
 			->whereNotNull('menu_id')
+			->orderBy('links.order', 'asc')
 			->get();
 		
 		$submenu =[];
@@ -205,6 +207,7 @@ class MainController extends Controller
 			->join('sections','links.section_id','=','sections.id')
 			->where('sections.template_id',$page_info->template_id)
 			->where('menu_id',NULL)
+			->orderBy('links.order', 'asc')
 			->get();
 		
 		$main_submenu = DB::table('links')
@@ -213,6 +216,7 @@ class MainController extends Controller
 			->join('sections','links.section_id','=','sections.id')
 			->where('sections.template_id',$page_info->template_id)
 			->whereNotNull('menu_id')
+			->orderBy('links.order', 'asc')
 			->get();
 		
 		$submenu =[];
