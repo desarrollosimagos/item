@@ -78,6 +78,11 @@ class CustomersController extends Controller
 		$site_info = DB::table('sites')
 			->where('domain',$site)
             ->first();
+
+		$languages = DB::table('languages')	
+			->where('languages.site_id', $site_info->id)
+			->where('languages.status', '1')
+            ->get();
 		
 		if(!$site_info->status)
 			$pages='maintenance';
@@ -199,10 +204,19 @@ class CustomersController extends Controller
 		$categories = DB::table('categories')
             ->get();
 		
-		$array = array('main_menu'=>$main_menu,'page'=>$pages,'dir'=>$dir,'title'=>$title,'content'=>$contents,'image_sites'=>$images,'metas'=>$metas,'submenu'=>$submenu,'categories'=>$categories,'portofolios'=>$portofolios,'customers'=>$customers );
-		//~ var_dump($array);
-		//~ print $template_info->route;
-		//~ var_dump($main_menu);
+		$array = array(
+			'main_menu'=>$main_menu,
+			'page'=>$pages,
+			'dir'=>$dir,
+			'title'=>$title,
+			'content'=>$contents,
+			'image_sites'=>$images,
+			'metas'=>$metas,
+			'submenu'=>$submenu,
+			'categories'=>$categories,
+			'portofolios'=>$portofolios,
+			'languages'=>$languages,
+			'customers'=>$customers );
 		return view($template_info->route)
 			->with($array);
 	}
