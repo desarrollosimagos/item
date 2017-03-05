@@ -20,9 +20,9 @@
 @section('top_menu')
 
 						<ul class="nav nav-pills">
-							<li class="hidden-xs"><a href="{{ url('lang/lang', ['en']) }}">En</a></li>
-							<li class="hidden-xs"><a href="{{ url('lang/lang', ['es']) }}">Es</a></li>
-							<li class="hidden-xs"><a href="{{ url('lang/lang', ['pt']) }}">Pt</a></li>
+							@foreach ($languages as $key => $lan)
+								<li class="hidden-xs"><a href="{{ url('lang/lang', [$lan->cod]) }}">{{ $lan->cod }}</a></li>
+							@endforeach
 						</ul>
 @endsection
 

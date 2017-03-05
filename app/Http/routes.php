@@ -35,9 +35,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('lang/lang/{lang}', function ($lang) {
         session(['lang' => $lang]);
         return \Redirect::back();
-    })->where([
-        'lang' => 'pt|es|en'
-    ]);
+    })->where(['lang' => 'pt|es|en']);
+    
+    //Route::get('lang/lang/{lang}', function ($lang) {
+    //    session(['lang' => $lang]);
+    //    return \Redirect::back();
+    //})->where(['lang' => 'pt|es|en']);
 
 });
 
