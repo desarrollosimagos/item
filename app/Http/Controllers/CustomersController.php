@@ -72,7 +72,7 @@ class CustomersController extends Controller
 		$site = $host;
 		$tmp = NULL;
 		if($pages==null){
-			$pages='index';
+			$pages='customers';
 		}
 		
 		$site_info = DB::table('sites')
