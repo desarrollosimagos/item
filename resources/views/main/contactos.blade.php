@@ -62,7 +62,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<ul class="breadcrumb">
-									<li><a href="index">Inicio</a></li>
+									<li><a href="index">{{ trans($metas['home-dir-title']) }}</a></li>
 									@if ($dir <> "")
 										<li class="active">{{$dir}}</li>
 									@endif
