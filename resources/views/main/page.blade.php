@@ -58,7 +58,7 @@
 
 @section('content')
 				<section class="page-header">
-					<div class="container">
+					<div class="container" style="margin-top: -24px;">
 						<div class="row">
 							<div class="col-md-12">
 								<ul class="breadcrumb">
@@ -112,10 +112,7 @@
 @endsection
 
 @section('footer_panel_two')
-							<h4>Latest Tweets</h4>
-							<div id="tweet" class="twitter" data-plugin-tweets data-plugin-options="{'username': '', 'count': 2}">
-								<p>Please wait...</p>
-							</div>		
+							
 @endsection
 
 @section('footer_panel_tree')

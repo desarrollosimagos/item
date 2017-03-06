@@ -78,7 +78,7 @@
 					</div>
 				</section>-->
 				
-				<div class="slider-container rev_slider_wrapper">
+				<div class="slider-container rev_slider_wrapper" style="margin-top: -24px;">
 					<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 500, 'disableProgressBar': 'on'}">
 						<ul>
 							<li data-transition="fade">

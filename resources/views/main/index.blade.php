@@ -59,7 +59,7 @@
 
 
 @section('content')
-				<div id="content" class="content full">
+				<div id="content" style="margin-top: -24px;" class="content full">
 					@foreach ($content as $key => $cont)
 						{!! $cont->content !!}
 					@endforeach

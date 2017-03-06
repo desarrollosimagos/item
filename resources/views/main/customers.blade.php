@@ -165,7 +165,7 @@
 @endsection
 
 @section('footer_panel_tree')
-							<div class="contact-details">
+							<div class="contact-details" style="margin-top: -24px;">
 								<h4>{!! trans($metas['contact-title']) !!}</h4>
 								<ul class="contact">
 									<li><p><i class="icon-map-marker"></i> 
