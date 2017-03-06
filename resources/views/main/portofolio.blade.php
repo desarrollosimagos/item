@@ -159,7 +159,7 @@
 							<div class="contact-details">
 								<h4>{!! trans($metas['contact-title']) !!}</h4>
 								<ul class="contact">
-									<li><p><i class="icon-map-marker"></i> 
+									<li><p><i class="icon-map"></i> 
 									{!! trans($metas['contact-field-one']) !!}
 									</li>
 									<li><p><i class="icon-phone"></i> 
