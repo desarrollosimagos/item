@@ -58,14 +58,14 @@
 
 @section('content')
 				<section class="page-header">
-					<div class="container">
+					<div class="container" style="margin-top: -24px;">
 						<div class="row">
 							<div class="col-md-12">
 								<ul class="breadcrumb">
-									<li><a href="index">Inicio</a></li>
+									<li><a href="index">{{ trans($metas['home-dir-title']) }}</a></li>
 									@if ($dir <> "")
 										<!--<li class="active">{{$dir}}</li>-->
-										<li class="active">{{trans('main.customer')}}</li>
+										<li class="active">{{trans('main.portofolio')}}</li>
 									@endif
 								</ul>
 							</div>
@@ -73,7 +73,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<!--<h1>{{$title}}</h1>-->
-								<h1>{{trans('main.customer')}}</h1>
+								<h1>{{trans('main.portofolio')}}</h1>
 							</div>
 						</div>
 					</div>
@@ -81,50 +81,74 @@
 
 				<div class="container">
 
-					<!--<h2>Customers</h2>-->
+					<h2>Portfolio</h2>
+					<!--@if (function_exists('trans'))
+						<span>La función trans está disponible.</span>
+					@else
+						<span>La función trans no está disponible.</span>
+					@endif-->
 
-					<!--<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
-						<li data-option-value="*" class="active"><a href="#">Show All</a></li>
+					<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
+						<li data-option-value="*" class="active"><a href="#">{{ trans('portafolio.filter-all') }}</a></li>
 						@foreach ($categories as $key => $cat)
-						<li data-option-value=".{{ $cat->name}}"><a href="#">{{ $cat->name}}</a></li>
+						<li data-option-value=".{{ str_replace(' ', '', $cat->name)}}"><a href="#">{{ trans($cat->ruta_lang) }}</a></li>
 						@endforeach
-					</ul>-->
-					
-					<ul class="nav nav-pills sort-source" data-sort-id="team" data-option-key="filter" style="display:none;">
-						<li data-option-value="*" class="active"><a href="#">Show All</a></li>
-						<!--@foreach ($categories as $key => $cat)
-						<li data-option-value=".{{ str_replace(' ', '', $cat->name)}}"><a href="#">{{ $cat->name }}</a></li>
-						@endforeach-->
-					</ul>					
+					</ul>
 
-					<!--<hr class="tall">-->
+					<hr>
 
-					<!--<div class="row">-->
-
+					<div class="row">	
 						<div class="sort-destination-loader sort-destination-loader-showing">
-							<ul class="team-list sort-destination" data-sort-id="team">
-								@foreach ($customers as $key => $cust)
-								<li class="col-md-3 col-sm-6 col-xs-12 isotope-item {{ str_replace(' ', '', $cust->categorie) }}">
-									<span class="thumb-info thumb-info-hide-wrapper-bg mb-xlg">
-										<span class="thumb-info-wrapper">
-											<a href="#">
-												<img src="{{ url('images/customer/'.$cust->file) }}" alt="" width="220px" height="220px">
-												
-											</a>
-										</span>
-										<span class="thumb-info-caption">
-											<span class="thumb-info-social-icons">
-												<center>
-													<span style="font-size:15px;font-weight:bold;color:#000000;text-align:center;">{{ $cust->customer }}</span>
-												</center>
-											</span>
-										</span>
-									</span>
+							@if(count($portofolios) == 0)
+							<span class="alert alert-warning">{{trans('portafolio.result-empty')}}</span>
+							@endif					
+							<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
+								@foreach ($portofolios as $key => $port)
+								<li class="col-md-12 isotope-item mt-xl {{ str_replace(' ', '', $port->categorie) }}">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="portfolio-item">
+                                                <a href="/{{$dir}}/{{ $port->id }}">
+                                                    <span class="thumb-info thumb-info-no-zoom thumb-info-lighten">
+                                                        <span class="thumb-info-wrapper">
+                                                            <img src="{{ url('images/images/'.$port->file) }}" class="img-responsive" alt="">
+                                                            <span class="thumb-info-action">
+                                                                <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+											<div class="portfolio-info">
+												<div class="row">
+													<div class="col-md-12 center">
+														<ul>
+															<!--<li>
+																<i class="fa fa-calendar"></i> {{ $port->date }}
+															</li>-->
+															<li>
+																<i class="fa fa-tags"></i> <a href="#">{{ $port->categorie }}</a></a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+
+											<h4 class="heading-primary">{{ $port->title }}</h4>
+											<p class="mt-xlg">{{ $port->short_describe }}</p>
+
+											<a href="/{{$dir}}/{{ $port->id }}" class="btn btn-primary">{{ trans('portafolio.show-more') }}</a>
+                                            {!! $port->html !!}
+											
+										</div>
+
+                                    </div>
 								</li>
 								@endforeach
 							</ul>
 						</div>
-
 					</div>
 
 				</div>
@@ -165,7 +189,7 @@
 @endsection
 
 @section('footer_panel_tree')
-							<div class="contact-details" style="margin-top: -24px;">
+							<div class="contact-details">
 								<h4>{!! trans($metas['contact-title']) !!}</h4>
 								<ul class="contact">
 									<li><p><i class="icon-map"></i> 
@@ -214,4 +238,3 @@
 							</div>-->
 						</div>
 @endsection
-

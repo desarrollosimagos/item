@@ -1,6 +1,9 @@
 <?php
 
 return [
+#BUSCADOR
+	'searcher' => 'Pesquisar aqui...',
+	
 #MENU
     'index' => 'Index',
     'item' => 'Item',
@@ -19,22 +22,19 @@ return [
 	'trabalhe-connosco' => 'Trabalhe connosco',
 
 #SLIDER
-	'slider-text1' => '"As nossas áreas de actuação são, estudos projectos, consultoria e fiscalização.<br>
-		Temos as competências e experiências necessárias para garantir um trabalho de<br>
-		excelência. Possuímos especialidades da arquitectura e engenharia. Quadros técnicos<br>
-		Com o domínio das diferentes especialidades da arquitectura e engenharia.”',
+	'slider-text1' => '"As nossas áreas de actuação são, estudos projectos, consultoria e fiscalização.',
+	'slider-text2' => 'Temos as competências e experiências necessárias para garantir um trabalho de',
+	'slider-text3' => 'excelência. Possuímos especialidades da arquitectura e engenharia. Quadros técnicos',
+	'slider-text4' => 'Com o domínio das diferentes especialidades da arquitectura e engenharia.”',
 
-	'slider1-text1' => '"VISUALIZAMOS AS IDEIAS DOS NOSSOS CLIENTES<br>
-		E TRADUZIMO-LAS EM PROJECTOS PERSONALIZADOS."',
+	'slider1-text1' => '"visualizamos as ideias dos nossos clientes e traduzimo-las em projectos personalizados."',
 
-	'slider2-text1' => '“NOSSAS EQUIPAS MULTIDISCIPLINARES SÃO <br>
-		EXPERIENTES E ESPECIALIZADAS NAS DIFERENTES<br>
-		COMPETÊNCIAS TÉCNICAS DA ARQUITECTURA E <br>
-		ENGENHARIA DIMENSIONADAS E ORGANIZADAS DE<br>
-		ACORDO COM AS CARACTERÍSTICAS DO SERVIÇO <br>
-		A PRESTAR E DOS REQUISITOS DO CLIENTE”',
+	'slider2-text1' => '“nossas equipas multidisciplinares são experientes e especializadas nas diferentes',
+	'slider2-text2' => 'competências técnicas da arquitectura e engenharia dimensionadas e organizadas de',
+	'slider2-text3' => 'acordo com as características do serviço a prestar e dos requisitos do cliente”',
 
 #CONTENIDO
+	'home-dir-title' => 'Inicio',
 	'last-project' => 'Últimas <strong>Projectos</strong>',
 	'who-we-are' => '<strong>Quem</strong> Somos',
 	'who-we-are-text1' => 'A ITEM É UMA EMPRESA DE DIREITO ANGOLANO, COM SEDE EM LUANDA E FILIAL EM MALANJE.
@@ -68,10 +68,16 @@ return [
 	'newsletter-description' => 'Digite seu e-mail e assine nosso boletim informativo.',
 	'newsletter-email' => 'Correio Eletrônico',
 	'newsletter-button' => 'Subscrever',
-	'contact-title' => 'Contato',
+	'contact-title' => 'Contacto',
 	'contact-field-one' => '<strong>Endereço:</strong> Condomínio Mirantes do Talatona Casa D20 – Talatona | Luanda – Angola</p>',
 	'contact-field-two' => '<strong>Telefone:</strong> +244 222 019 224</p>',
 	'contact-field-tree' => '<strong>Email:</strong> <a href="mailto:atendimento@itemao.com">atendimento@itemao.com</a></p>',
+	'social-tittle' => 'Redes Sociales',
 	'copyrigh' => '© Copyright 2017 Item Engineering. Todos os direitos reservados.',
+	
+	#REGISTRO EMAIL
+	'mss-reg-email' => '<strong>Sucesso!</strong> Seu e-mail foi registrado com sucesso.',
+	'mss-alert1-email' => '<strong>Atenção!</strong> O endereço de e-mail não é válido.',
+	'mss-alert2-email' => '<strong>Atenção!</strong> Seu e-mail já foi registrado.',
 
 ];

@@ -18,6 +18,9 @@
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- csrf-token Metas -->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 
 		<!-- Web Fonts  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
@@ -61,11 +64,11 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-search hidden-xs">
-										<form id="searchForm" action="page-search-results.html" method="get">
+										<form id="searchForm" action="/find_portofolios" method="get">
 											<div class="input-group">
-												<input type="text" class="form-control" name="q" id="q" placeholder="Search..." required>
+												<input type="text" class="form-control" name="q" id="q" placeholder="{{ trans('main.searcher') }}" required>
 												<span class="input-group-btn">
-													<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+													<button class="btn btn-default" id="buscar" type="button"><i class="fa fa-search"></i></button>
 												</span>
 											</div>
 										</form>
@@ -201,6 +204,111 @@
 			ga('send', 'pageview');
 		</script>
 		 -->
+		 
+		 <script>
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+			
+			$(document).ready(function () {
+			//~ $(function () {
+				$('#enviar_mail').click(function(e){
+					e.preventDefault();
+					// Expresion regular para validar el correo
+					var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+					
+					if ($('#newsletterEmail').val().trim() != '' && regex.test($('#newsletterEmail').val().trim())){
+						$.ajax({
+							method: "POST",
+							url: '/find_mail',
+							data: $('#newsletterForm').serialize()
+						})
+						.done(function(data) {
+							if(data.error){
+								console.log(data.error);
+							} else {
+								if (parseInt(data) > 0){
+									//~ alert("Your mail has already been registered");
+									$("#modal_reg_email3").modal('show');
+									$("#contenido_modal3").addClass("alert-danger");
+									$("#contenido_modal3").html("{!!trans('main.mss-alert2-email')!!}");
+								}else{
+									$.ajax({
+										method: "POST",
+										url: '/reg_mail',
+										data: $('#newsletterForm').serialize()
+									})
+									.done(function(data) {
+										if(data.error){
+											console.log(data.error);
+										} else {
+											//~ alert("Email registered...");
+											$("#modal_reg_email3").modal('show');
+											$("#contenido_modal3").removeClass("alert-danger");
+											$("#contenido_modal3").addClass("alert-success");
+											$("#contenido_modal3").html("{!!trans('main.mss-reg-email')!!}");
+											$('#newsletterEmail').val('');
+											$('#newsletterEmail').focus();
+										}
+										
+									}).fail(function() {
+										console.log("error ajax");
+									});
+								}
+							}
+							
+						}).fail(function() {
+							console.log("error ajax");
+						});
+					}else{
+						//~ alert("The email address is not valid...");
+						$("#modal_reg_email3").modal('show');
+						$("#contenido_modal3").addClass("alert-danger");
+						$("#contenido_modal3").html("{!!trans('main.mss-alert1-email')!!}");
+						$('#newsletterEmail').focus();
+					}
+				})
+				
+				// Ejecutamos la busqueda al cambiar el valor del campo de búsqueda
+				$("#buscar").click(function (e) {
+					e.preventDefault();  // Para evitar que se envíe por defecto
+					
+					//~ alert("Buscando...");
+					
+					if ($('#q').val().trim() != ''){
+						//~ alert("Buscando");
+						url = "/find_portofolios?q="+$('#q').val().trim();
+						document.location=url;
+					}
+				});
+				
+			//~ });
+			});
+		</script>
+		
+		<div id="modal_reg_email3" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
 
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<!--<h4 class="modal-title">Modal Header</h4>-->
+			  </div>
+			  <div class="modal-body">
+				<div class="alert alert-success" id="contenido_modal3">
+				  
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+
+		  </div>
+		</div>
+		
 	</body>
 </html>

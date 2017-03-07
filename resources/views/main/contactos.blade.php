@@ -58,7 +58,7 @@
 
 @section('content')
 				<section class="page-header">
-					<div class="container">
+					<div class="container" style="margin-top: -24px;">
 						<div class="row">
 							<div class="col-md-12">
 								<ul class="breadcrumb">
@@ -104,7 +104,7 @@
 									<div class="input-group">
 										<input class="form-control" placeholder="{{ trans($metas['newsletter-email']) }}" name="newsletterEmail" id="newsletterEmail" type="text">
 										<span class="input-group-btn">
-											<button class="btn btn-default" type="submit">{{ trans($metas['newsletter-button']) }}</button>
+											<button class="btn btn-default" id="enviar_mail" type="button">{{ trans($metas['newsletter-button']) }}</button>
 										</span>
 									</div>
 								</form>
@@ -112,12 +112,10 @@
 @endsection
 
 @section('footer_panel_two')
-							<!--
 							<h4>Latest Tweets</h4>
 							<div id="tweet" class="twitter" data-plugin-tweets data-plugin-options="{'username': '', 'count': 2}">
 								<p>Please wait...</p>
 							</div>	
-							-->	
 @endsection
 
 @section('footer_panel_tree')

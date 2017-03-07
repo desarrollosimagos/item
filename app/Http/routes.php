@@ -24,9 +24,18 @@ Route::get('/customers_json', 'CustomersController@customers_json');
 Route::get('/number_json', 'PortofolioController@number_json');
 Route::get('/number_customers', 'CustomersController@number_customers');
 
+Route::post('/reg_mail', 'RegistrosController@registro_mails');
+Route::post('/find_mail', 'RegistrosController@find_mail');
+
+Route::post('/reg_message', 'RegistrosController@registro_message');
+
+Route::post('/reg_postulation', 'RegistrosController@registro_postulation');
+
 //Route::get('/customers', 'CustomersController@page');
 
 Route::group(['middleware' => ['web']], function () {
+	
+	Route::get('/find_portofolios', 'BuscadorController@page');
 
     Route::get('/customers', 'CustomersController@page');
 

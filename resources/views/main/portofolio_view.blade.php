@@ -65,7 +65,7 @@
 									<li><a href="index">{{ trans($metas['home-dir-title']) }}</a></li>
 									@if ($dir <> "")
 										<li><a href="/portofolio">{{$dir}}</a></li>
-										<li class="active">{{ trans($metas['view-dir-title']) }}</li>
+										<li class="active">{{$portofolios->title}}</li>
 									@endif
 								</ul>
 							</div>
@@ -160,9 +160,9 @@
 							
 							<div class="row mb-xlg">
 								<div class="counters counters-sm">
-									<h5 class="mt-lg mb-sm">
+									<!--<h5 class="mt-lg mb-sm">
 									{{trans('portafolio.figures')}}
-									</h5>
+									</h5>-->
 									@foreach ($meta_portofolio as $key => $meta)
 										@if ($meta->value != NULL)
 											@if ($meta->group == 'meta.view.number')
@@ -241,7 +241,7 @@
 									<div class="input-group">
 										<input class="form-control" placeholder="{{ trans($metas['newsletter-email']) }}" name="newsletterEmail" id="newsletterEmail" type="text">
 										<span class="input-group-btn">
-											<button class="btn btn-default" type="submit">{{ trans($metas['newsletter-button']) }}</button>
+											<button class="btn btn-default" id="enviar_mail" type="button">{{ trans($metas['newsletter-button']) }}</button>
 										</span>
 									</div>
 								</form>
