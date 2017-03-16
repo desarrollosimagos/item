@@ -163,7 +163,13 @@
 											@if ($meta->group == 'meta.view.number')
 												<div class="col-md-3 col-sm-6">
 													<div class="counter">
-														<strong data-to="{{$meta->value}}">0</strong>
+														<strong data-to="
+														@foreach(explode(' ', $meta->value) as $key => $value)
+															@if ($key == 0)
+																{{$value}}
+															@endif
+														@endforeach
+														">0</strong>
 														<label>
 														<!--@foreach(explode('.', $meta->name) as $name)
 															@if ($name != 'main')
@@ -204,6 +210,7 @@
 							@endforeach
 						</div> 
 					</div>
+					
 				</div>
 @endsection
 
