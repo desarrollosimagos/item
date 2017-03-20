@@ -26,6 +26,8 @@ Route::group(['middleware' => ['web']], function () {
 	
 	Route::get('/{pages?}/{id?}', 'MainController@view');
 	
+	Route::get('/{pages?}', 'CustomersController@page');
+	
 	//Route::get('/{pages?}/{page?}', 'MainController@page');
 
     Route::get('lang/lang/{lang}', function ($lang) {
