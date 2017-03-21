@@ -173,6 +173,32 @@
 			ga('send', 'pageview');
 		</script>
 		 -->
+		 
+		<script>
+			
+			$(document).ready(function () {
+				alert("Cargado...");
+			});
+			
+			$.ajax({
+                //~ data:  parametros,
+                url: 'gethint',
+                type:  'post',
+                beforeSend: function () {
+					//~ $("#resultado").html("Procesando, espere por favor...");
+                    alert("Procesando, espere por favor...");    
+                },
+                success:  function (data) {
+					alert(data);
+                    //~ var dhtml="";
+                        //~ for (datas in data.datos) {
+                          //~ dhtml+=' <p> Nombre: '+data.datos[datas].login+'</p>';
+                        //~ };
+                    //~ 
+                    //~ $("#resultado").html(data.resultado + " "+ data.sms+" "+dhtml);
+                }
+			});
+		</script>
 
 	</body>
 </html>

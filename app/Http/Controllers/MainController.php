@@ -277,4 +277,11 @@ class MainController extends Controller
 		return view($template_info->route)
 			->with(array('main_menu'=>$main_menu,'page'=>$pages,'dir'=>$dir,'title'=>$title,'content'=>$contents,'image_sites'=>$images,'metas'=>$metas,'submenu'=>$submenu,'categories'=>$categories,'portofolios'=>$portofolios ));
 	}
+	
+	public function lista_porto(){
+		$portofolios = DB::table('portofolios')->get();
+		
+		return json_encode($portofolios);
+	}
+	
 }
