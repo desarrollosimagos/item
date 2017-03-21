@@ -137,7 +137,10 @@ class CustomersController extends Controller
 			->get();
 		
 		$customers = DB::table('customers')
-            ->get();
+            ->distinct()
+			->select('customers.id as id', 'customers.customer as customer', 'customers.date as date', 'customers.url as url', 'customers.file as file', 'categories.name as categorie')
+			->join('categories','categories.id','=','customers.categorie_id')
+			->get();
             
 		$categories = DB::table('categories')
             ->get();

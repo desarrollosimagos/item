@@ -87,41 +87,47 @@
 						<li data-option-value=".{{ $cat->name}}"><a href="#">{{ $cat->name}}</a></li>
 						@endforeach
 					</ul>-->
+					
+					<ul class="nav nav-pills sort-source" data-sort-id="team" data-option-key="filter">
+						<li data-option-value="*" class="active"><a href="#">Show All</a></li>
+						@foreach ($categories as $key => $cat)
+						<li data-option-value=".{{ $cat->name}}"><a href="#">{{ $cat->name}}</a></li>
+						@endforeach
+					</ul>					
 
 					<hr class="tall">
-					
-					@foreach ($customers as $key => $cust)
+
 					<div class="row">
-						<div class="col-md-3">
-							<img src="{{ url('images/customer/'.$cust->file) }}" class="img-responsive appear-animation" data-appear-animation="bounce" data-appear-animation-delay="0" data-appear-animation-duration="1s" width="100" height="100">
-						</div>
-						<div class="col-md-9">
-							<h4>{{ $cust->customer }}</h4>
-							<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra leo. Nullam convallis, arcu vel pellentesque sodales, nisi est varius diam, ac ultrices sem ante quis sem. Proin ultricies volutpat sapien, nec scelerisque ligula mollis lobortis.</p>-->
-							<hr class="tall">
-						</div>
-					</div>
-					<br>
-					<br>
-					<br>
-					<!--<li class="col-md-4 isotope-item ">
-						<div class="portfolio-item">
-							<a href="/{{$dir}}/{{ $cust->id }}">
-								<span class="thumb-info thumb-info-lighten">
-									<span class="thumb-info-wrapper">
-										<img src="{{ url('images/images/'.$cust->file) }}" class="img-responsive" alt="">
-										<span class="thumb-info-title">
-											<span class="thumb-info-inner">{{ $cust->customer }}</span>
+
+						<div class="sort-destination-loader sort-destination-loader-showing">
+							<ul class="team-list sort-destination" data-sort-id="team">
+								@foreach ($customers as $key => $cust)
+								<li class="col-md-3 col-sm-6 col-xs-12 isotope-item {{ $cust->categorie }}">
+									<span class="thumb-info thumb-info-hide-wrapper-bg mb-xlg">
+										<span class="thumb-info-wrapper">
+											<a href="#">
+												<img src="{{ url('images/customer/'.$cust->file) }}" alt="" width="220px" height="220px">
+												<span class="thumb-info-title">
+													<span class="thumb-info-inner">{{ $cust->customer }}</span>
+													<span class="thumb-info-type">CEO</span>
+												</span>
+											</a>
 										</span>
-										<span class="thumb-info-action">
-											<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
+										<span class="thumb-info-caption">
+											<span class="thumb-info-caption-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</span>
+											<span class="thumb-info-social-icons">
+												<a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+												<a href="http://www.twitter.com"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+												<a href="http://www.linkedin.com"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
+											</span>
 										</span>
 									</span>
-								</span>
-							</a>
+								</li>
+								@endforeach
+							</ul>
 						</div>
-					</li>-->
-					@endforeach
+
+					</div>
 
 				</div>
 @endsection
