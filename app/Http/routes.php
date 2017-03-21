@@ -39,3 +39,25 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 
+Route::get('ajax', function()
+{
+	return View::make('index');
+});
+
+
+Route::post('gethint', 'MainController@lista_porto');
+
+//~ Route::post('gethint', function()
+//~ {
+	//~ $datos=DB::table('datos')->get();
+//~ 
+	//~ $resultado =Input::get('valorCaja1') + Input::get('valorCaja2');
+	//~ 
+	//~ return Response::json( array(
+		//~ 'resultado' => $resultado, 
+		//~ 'sms' => " Parametro AJAX y JSON", 
+		//~ 'datos' => $datos, 
+		//~ ));
+//~ 
+//~ });
+
