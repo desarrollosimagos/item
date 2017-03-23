@@ -79,7 +79,7 @@
 
 				<div class="container">
 
-					<h2>Customers</h2>
+					<!--<h2>Customers</h2>-->
 
 					<!--<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
 						<li data-option-value="*" class="active"><a href="#">Show All</a></li>
@@ -88,37 +88,34 @@
 						@endforeach
 					</ul>-->
 					
-					<ul class="nav nav-pills sort-source" data-sort-id="team" data-option-key="filter">
+					<ul class="nav nav-pills sort-source" data-sort-id="team" data-option-key="filter" style="display:none;">
 						<li data-option-value="*" class="active"><a href="#">Show All</a></li>
-						@foreach ($categories as $key => $cat)
-						<li data-option-value=".{{ $cat->name}}"><a href="#">{{ $cat->name}}</a></li>
-						@endforeach
+						<!--@foreach ($categories as $key => $cat)
+						<li data-option-value=".{{ str_replace(' ', '', $cat->name)}}"><a href="#">{{ $cat->name }}</a></li>
+						@endforeach-->
 					</ul>					
 
-					<hr class="tall">
+					<!--<hr class="tall">-->
 
-					<div class="row">
+					<!--<div class="row">-->
 
 						<div class="sort-destination-loader sort-destination-loader-showing">
 							<ul class="team-list sort-destination" data-sort-id="team">
 								@foreach ($customers as $key => $cust)
-								<li class="col-md-3 col-sm-6 col-xs-12 isotope-item {{ $cust->categorie }}">
+								<li class="col-md-3 col-sm-6 col-xs-12 isotope-item {{ str_replace(' ', '', $cust->categorie) }}">
 									<span class="thumb-info thumb-info-hide-wrapper-bg mb-xlg">
 										<span class="thumb-info-wrapper">
 											<a href="#">
 												<img src="{{ url('images/customer/'.$cust->file) }}" alt="" width="220px" height="220px">
-												<span class="thumb-info-title">
-													<span class="thumb-info-inner">{{ $cust->customer }}</span>
-													<span class="thumb-info-type">CEO</span>
-												</span>
+												
 											</a>
 										</span>
 										<span class="thumb-info-caption">
 											<span class="thumb-info-caption-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</span>
+										</span>
+										<span class="thumb-info-caption">
 											<span class="thumb-info-social-icons">
-												<a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i><span>Facebook</span></a>
-												<a href="http://www.twitter.com"><i class="fa fa-twitter"></i><span>Twitter</span></a>
-												<a href="http://www.linkedin.com"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
+												<span style="font-size:15px;font-weight:bold;background: rgba(23, 23, 23, 0.8);color:#fff;">{{ $cust->customer }}</span>
 											</span>
 										</span>
 									</span>
