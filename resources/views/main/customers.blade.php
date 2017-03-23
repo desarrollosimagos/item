@@ -111,9 +111,6 @@
 											</a>
 										</span>
 										<span class="thumb-info-caption">
-											<span class="thumb-info-caption-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</span>
-										</span>
-										<span class="thumb-info-caption">
 											<span class="thumb-info-social-icons">
 												<span style="font-size:15px;font-weight:bold;background: rgba(23, 23, 23, 0.8);color:#fff;">{{ $cust->customer }}</span>
 											</span>
