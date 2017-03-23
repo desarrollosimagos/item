@@ -39,6 +39,8 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 
+Route::get('/{pages?}', 'ServicesController@page');
+
 Route::get('ajax', function()
 {
 	return View::make('index');
