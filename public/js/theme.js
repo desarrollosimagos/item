@@ -146,6 +146,7 @@ window.theme.fn = {
 }).apply(this, [window.theme, jQuery]);
 
 // Carousel
+/*
 (function(theme, $) {
 
 	theme = theme || {};
@@ -278,7 +279,7 @@ window.theme.fn = {
 	}
 
 }).apply(this, [window.theme, jQuery]);
-
+*/
 // Chart Circular
 (function(theme, $) {
 
