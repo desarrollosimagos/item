@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 //Route::get('/', 'MainController@index');
 Route::get('/index_json', 'PortofolioController@index_json');
-
+Route::get('/customers_json', 'CustomersController@customers_json');
 
 Route::group(['middleware' => ['web']], function () {
 
