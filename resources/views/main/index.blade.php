@@ -63,7 +63,10 @@
 					@foreach ($content as $key => $cont)
 						{!! $cont->content !!}
 					@endforeach
+					
 				</div>
+
+
 @endsection
 
 @section('footer_title')

@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 
 //Route::get('/', 'MainController@index');
+Route::get('/index_json', 'PortofolioController@index_json');
 
 
 Route::group(['middleware' => ['web']], function () {
@@ -27,8 +28,6 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/{pages?}/{id?}', 'MainController@view');
 	
 	Route::get('/{pages?}', 'CustomersController@page');
-	
-	//Route::get('/{pages?}/{page?}', 'MainController@page');
 
     Route::get('lang/lang/{lang}', function ($lang) {
         session(['lang' => $lang]);
@@ -38,28 +37,4 @@ Route::group(['middleware' => ['web']], function () {
     ]);
 
 });
-
-Route::get('/{pages?}', 'ServicesController@page');
-
-Route::get('ajax', function()
-{
-	return View::make('index');
-});
-
-
-Route::post('gethint', 'MainController@lista_porto');
-
-//~ Route::post('gethint', function()
-//~ {
-	//~ $datos=DB::table('datos')->get();
-//~ 
-	//~ $resultado =Input::get('valorCaja1') + Input::get('valorCaja2');
-	//~ 
-	//~ return Response::json( array(
-		//~ 'resultado' => $resultado, 
-		//~ 'sms' => " Parametro AJAX y JSON", 
-		//~ 'datos' => $datos, 
-		//~ ));
-//~ 
-//~ });
 
