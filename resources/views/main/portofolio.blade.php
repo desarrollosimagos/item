@@ -84,7 +84,7 @@
 					<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
 						<li data-option-value="*" class="active"><a href="#">Show All</a></li>
 						@foreach ($categories as $key => $cat)
-						<li data-option-value=".{{ $cat->name}}"><a href="#">{{ $cat->name}}</a></li>
+						<li data-option-value=".{{ str_replace(' ', '', $cat->name)}}"><a href="#">{{ $cat->name }}</a></li>
 						@endforeach
 					</ul>
 
@@ -95,7 +95,7 @@
 						<div class="sort-destination-loader sort-destination-loader-showing">
 							<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
 								@foreach ($portofolios as $key => $port)
-								<li class="col-md-4 isotope-item {{ $port->categorie }}">
+								<li class="col-md-4 isotope-item {{ str_replace(' ', '', $port->categorie) }}">
 									<div class="portfolio-item">
 										<a href="/{{$dir}}/{{ $port->id }}">
 											<span class="thumb-info thumb-info-lighten">
