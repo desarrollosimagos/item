@@ -21,6 +21,9 @@ Route::get('/', function () {
 Route::get('/index_json', 'PortofolioController@index_json');
 Route::get('/customers_json', 'CustomersController@customers_json');
 
+Route::get('/number_json', 'PortofolioController@number_json');
+Route::get('/number_customers', 'CustomersController@number_customers');
+
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/{pages?}', 'MainController@page');
