@@ -100,9 +100,9 @@
 			<footer id="footer">
 				<div class="container">
 					<div class="row">
-						<div class="footer-ribbon">
+						<!--<div class="footer-ribbon">
 							@yield('footer_title')
-						</div>
+						</div>-->
 						<div class="col-md-3">
 							@yield('footer_panel_one')
 						</div>
