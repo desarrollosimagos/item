@@ -49,7 +49,7 @@
 	</head>
 	<body>
 		<div class="body">
-			<header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 57, 'stickySetTop': '-57px', 'stickyChangeLogo': true}">
+			<header id="header" >
 				<div class="header-body">
 					<div class="header-container container">
 						<div class="header-row">
