@@ -112,7 +112,9 @@
 										</span>
 										<span class="thumb-info-caption">
 											<span class="thumb-info-social-icons">
-												<span style="font-size:15px;font-weight:bold;background: rgba(23, 23, 23, 0.8);color:#fff;">{{ $cust->customer }}</span>
+												<center>
+													<span style="font-size:15px;font-weight:bold;color:#000000;text-align:center;">{{ $cust->customer }}</span>
+												</center>
 											</span>
 										</span>
 									</span>
