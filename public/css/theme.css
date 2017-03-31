@@ -3084,8 +3084,8 @@ html.dark .text-muted {
 }
 /* #Footer */
 #footer {
-	background: #0e0e0e;
-	border-top: 4px solid #0e0e0e;
+	background: #115079;
+	border-top: 4px solid #115079;
 	font-size: 0.9em;
 	margin-top: 50px;
 	padding: 70px 0 0;
@@ -3270,8 +3270,8 @@ html.dark .text-muted {
 }
 
 #footer .footer-copyright {
-	background: #060606;
-	border-top: 4px solid #060606;
+	background: #000000;
+	border-top: 4px solid #000000;
 	margin-top: 40px;
 	padding: 30px 0 10px;
 }
