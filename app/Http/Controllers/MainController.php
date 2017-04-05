@@ -230,8 +230,9 @@ class MainController extends Controller
 		$contents = DB::table('contents')
 			->where('page_id', $page_info->id)
             ->get();
-		
-        $matches = null;
+
+		$matches = null;
+
 		foreach($contents as $item){
             //echo var_dump($item);
             $tmp = null;
