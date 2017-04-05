@@ -1,15 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-
 use DB;
 use App\Quotation;
 use App\Page;
-
-
 class MainController extends Controller
 {
 	
@@ -28,7 +23,6 @@ class MainController extends Controller
             ->first();
 		
 		$template_info_route = 'main.portofolio_view';
-
 		if(!$site_info->status)
 			return redirect('/index');
 		
@@ -110,13 +104,11 @@ class MainController extends Controller
 			->join('categories','categories.id','=','portofolios.categorie_id')
 			->where('portofolios.id',$portofolio_id)
 			->first();
-
 		$next = DB::table('portofolios')
 			->where('id','<',$portofolio_id)
 			->limit(1)
 			->orderBy('id', 'desc')
 			->first();
-
 		$prev = DB::table('portofolios')
 			->where('id','>',$portofolio_id)
 			->limit(1)
@@ -127,7 +119,6 @@ class MainController extends Controller
 			->distinct()
 			->where('imagesportofolios.portofolio_id',$portofolio_id)
 			->get();
-
 		$meta_portofolio = DB::table('metaportofolios')
 			->distinct()
 			->where('metaportofolios.portofolio_id',$portofolio_id)
@@ -161,6 +152,11 @@ class MainController extends Controller
 		$site_info = DB::table('sites')
 			->where('domain',$site)
             ->first();
+
+		$languages = DB::table('languages')	
+			->where('languages.site_id', $site_info->id)
+			->where('languages.status', '1')
+            ->get();
 		
 		if(!$site_info->status)
 			$pages='maintenance';
@@ -239,32 +235,40 @@ class MainController extends Controller
 		$contents = DB::table('contents')
 			->where('page_id', $page_info->id)
             ->get();
-		
-		foreach($contents as $item){
-			preg_match_all('{{%.*?.*?%}}', $item->content, $tmp);
-		}
-		$mod = array();
-		$i = 0;
-		if($tmp != NULL){
-			foreach($tmp as $conver){
-				foreach($conver as $c){
-					//$t = explode($c,'{% ');
-					$rest = substr($c, 3, -3);
-					$mod[$i]['origin'] = $c;
-					$mod[$i]['base'] = $rest;
-					$mod[$i]['trans'] = trans($rest);
-					$i++;
-				}
-			}
 
-			$i=0;
-			foreach($contents as $item){
-				foreach($mod as $trans){
-					$contents[$i]->content = str_replace($trans['origin'],$trans['trans'], $contents[$i]->content);
-				}
-				$i++;
-			}
+		$matches = null;
+
+		foreach($contents as $item){
+            //echo var_dump($item);
+            $tmp = null;
+            $returnValue = preg_match_all('{{%.*?.*?%}}', $item->content, $tmp);
+			//preg_match_all("{{%.*?.*?%}}", $item->content, $tmp);
+           //echo var_dump($matches);
+            $mod = array();
+            $i = 0;
+            if($tmp != NULL){
+                foreach($tmp as $conver){
+                    foreach($conver as $c){
+                        //$t = explode($c,'{% ');
+                        $rest = substr($c, 2, -2);
+                        $mod[$i]['origin'] = $c;
+                        $mod[$i]['base'] = $rest;
+                        $mod[$i]['trans'] = trans($rest);
+                        $i++;
+                    }
+                }
+                $i=0;
+                foreach($contents as $item){
+                    foreach($mod as $trans){
+                        $contents[$i]->content = str_replace($trans['origin'],$trans['trans'], $contents[$i]->content);
+                    }
+                    $i++;
+                }
+            }
 		}
+        //echo var_dump($tmp);
+        //exit;
+		
 		
 		$portofolios = DB::table('portofolios')
 			->distinct()
@@ -279,13 +283,8 @@ class MainController extends Controller
 		
 		
 		return view($template_info->route)
-			->with(array('main_menu'=>$main_menu,'page'=>$pages,'dir'=>$dir,'title'=>$title,'content'=>$contents,'image_sites'=>$images,'metas'=>$metas,'submenu'=>$submenu,'categories'=>$categories,'portofolios'=>$portofolios ));
+			->with(array('main_menu'=>$main_menu,'page'=>$pages,'dir'=>$dir,'title'=>$title,'content'=>$contents,'image_sites'=>$images,'metas'=>$metas,'submenu'=>$submenu,'categories'=>$categories,'portofolios'=>$portofolios,'languages'=>$languages ));
 	}
-	
-	public function lista_porto(){
-		$portofolios = DB::table('portofolios')->get();
-		
-		return json_encode($portofolios);
-	}
+
 	
 }

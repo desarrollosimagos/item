@@ -131,7 +131,39 @@
 										@yield('social_menu')
 										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
 											<nav>
-												@yield('main_menu')
+												<ul id="mainNav" class="nav nav-pills">
+													<li class="dropdown">
+														<a href="/">{{ trans('main.item') }} </a>
+														<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																<a href="{{ url('empresa') }}">{{ trans('main.empresa') }} </a>
+															</li>
+															<li class="dropdown-submenu">
+																<a href="{{ url('filosofia-da-empresa') }}">{{ trans('main.filosofia-da-empresa') }} </a>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a href="{{ url('services') }}">{{ trans('main.service') }}</a>
+													</li>
+													<li class="dropdown">
+														<a href="{{ url('portofolio') }}">{{ trans('main.portofolio') }}</a>
+													</li>
+													<li class="dropdown">
+														<a href="{{ url('customers') }}">{{ trans('main.customer') }}</a>
+													</li>
+													<li class="dropdown">
+														<a href="{{ url('contact') }}">{{ trans('main.contact') }}</a>
+														<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																<a href="{{ url('contact') }}">{{ trans('main.contact') }}</a>
+															</li>
+															<li class="dropdown-submenu">
+																<a href="{{ url('trabalhe-connosco') }}">{{ trans('main.trabalhe-connosco') }}</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
 											</nav>
 										</div>
 									</div>
