@@ -24,9 +24,11 @@ Route::get('/customers_json', 'CustomersController@customers_json');
 Route::get('/number_json', 'PortofolioController@number_json');
 Route::get('/number_customers', 'CustomersController@number_customers');
 
-Route::get('/customers', 'CustomersController@page');
+//Route::get('/customers', 'CustomersController@page');
 
 Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/customers', 'CustomersController@page');
 
     Route::get('/{pages?}', 'MainController@page');
 	
@@ -35,9 +37,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('lang/lang/{lang}', function ($lang) {
         session(['lang' => $lang]);
         return \Redirect::back();
-    })->where([
-        'lang' => 'pt|es|en'
-    ]);
+    })->where(['lang' => 'pt|es|en']);
+    
+    //Route::get('lang/lang/{lang}', function ($lang) {
+    //    session(['lang' => $lang]);
+    //    return \Redirect::back();
+    //})->where(['lang' => 'pt|es|en']);
 
 });
 

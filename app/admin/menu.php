@@ -22,6 +22,7 @@ Admin::menu()->label('Admin Configurations')->icon('fa-book')->items(function ()
 	Admin::menu(\App\Administrator::class)->icon('fa-user')->label('Administrador');
 	Admin::menu(\App\Site::class)->icon('fa-user')->label('Sites');
 	Admin::menu(\App\Acces::class)->icon('fa-user')->label('Access for Maintenance');
+	Admin::menu(\App\Language::class)->icon('fa-user')->label('Languages of the system');
 	Admin::menu(\App\Template::class)->icon('fa-user')->label('Templates');
 });
 

@@ -152,6 +152,11 @@ class MainController extends Controller
 		$site_info = DB::table('sites')
 			->where('domain',$site)
             ->first();
+
+		$languages = DB::table('languages')	
+			->where('languages.site_id', $site_info->id)
+			->where('languages.status', '1')
+            ->get();
 		
 		if(!$site_info->status)
 			$pages='maintenance';
@@ -278,13 +283,8 @@ class MainController extends Controller
 		
 		
 		return view($template_info->route)
-			->with(array('main_menu'=>$main_menu,'page'=>$pages,'dir'=>$dir,'title'=>$title,'content'=>$contents,'image_sites'=>$images,'metas'=>$metas,'submenu'=>$submenu,'categories'=>$categories,'portofolios'=>$portofolios ));
+			->with(array('main_menu'=>$main_menu,'page'=>$pages,'dir'=>$dir,'title'=>$title,'content'=>$contents,'image_sites'=>$images,'metas'=>$metas,'submenu'=>$submenu,'categories'=>$categories,'portofolios'=>$portofolios,'languages'=>$languages ));
 	}
-	
-	public function lista_porto(){
-		$portofolios = DB::table('portofolios')->get();
-		
-		return json_encode($portofolios);
-	}
+
 	
 }
