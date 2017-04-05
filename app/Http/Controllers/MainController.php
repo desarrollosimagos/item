@@ -22,6 +22,11 @@ class MainController extends Controller
 			->where('domain',$site)
             ->first();
 		
+		$languages = DB::table('languages')	
+			->where('languages.site_id', $site_info->id)
+			->where('languages.status', '1')
+            ->get();
+		
 		$template_info_route = 'main.portofolio_view';
 		if(!$site_info->status)
 			return redirect('/index');
@@ -137,6 +142,7 @@ class MainController extends Controller
 			'image_portofolio'=>$image_portofolio,
 			'meta_portofolio'=>$meta_portofolio,
 			'next' => $next,
+			'languages'=>$languages,
 			'prev' => $prev));
 	}
 	
@@ -283,7 +289,18 @@ class MainController extends Controller
 		
 		
 		return view($template_info->route)
-			->with(array('main_menu'=>$main_menu,'page'=>$pages,'dir'=>$dir,'title'=>$title,'content'=>$contents,'image_sites'=>$images,'metas'=>$metas,'submenu'=>$submenu,'categories'=>$categories,'portofolios'=>$portofolios,'languages'=>$languages ));
+			->with(array(
+				'main_menu'=>$main_menu,
+				'page'=>$pages,
+				'dir'=>$dir,
+				'title'=>$title,
+				'content'=>$contents,
+				'image_sites'=>$images,
+				'metas'=>$metas,
+				'submenu'=>$submenu,
+				'categories'=>$categories,
+				'portofolios'=>$portofolios,
+				'languages'=>$languages ));
 	}
 
 	

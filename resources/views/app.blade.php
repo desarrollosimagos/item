@@ -71,7 +71,11 @@
 										</form>
 									</div>
 									<nav class="header-nav-top">
-										@yield('top_menu')
+										<ul class="nav nav-pills">
+											@foreach ($languages as $key => $lan)
+												<li class="hidden-xs"><a href="{{ url('lang/lang', [$lan->cod]) }}">{{ $lan->cod }}</a></li>
+											@endforeach
+										</ul>
 									</nav>
 								</div>
 								<div class="header-row">

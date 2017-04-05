@@ -145,10 +145,19 @@ class ServicesController extends Controller
 		$categories = DB::table('categories')
             ->get();
 		
-		$array = array('main_menu'=>$main_menu,'page'=>$pages,'dir'=>$dir,'title'=>$title,'content'=>$contents,'image_sites'=>$images,'metas'=>$metas,'submenu'=>$submenu,'categories'=>$categories,'portofolios'=>$portofolios,'customers'=>$customers );
-		//~ var_dump($array);
-		//~ print $template_info->route;
-		//~ var_dump($main_menu);
+		$array = array(
+			'main_menu'=>$main_menu,
+			'page'=>$pages,
+			'dir'=>$dir,
+			'title'=>$title,
+			'content'=>$contents,
+			'image_sites'=>$images,
+			'metas'=>$metas,
+			'submenu'=>$submenu,
+			'categories'=>$categories,
+			'languages'=>$languages,
+			'portofolios'=>$portofolios,
+			'customers'=>$customers );
 		return view($template_info->route)
 			->with($array);
 	}
