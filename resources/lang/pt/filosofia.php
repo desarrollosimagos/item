@@ -1,13 +1,28 @@
 <?php
 
 return [
-    'slider-title1' => 'Filosofia da Empresa',
-    'slider-text1' => '<strong>MISSÃO:</strong> PRESTAR SERVIÇOS DE PROJECTOS , CONSULTORIA E FISCALIZAÇÃO COM <br>
-        EFICIÊNCIA E QUALIDADE, RESPEITANDO O AMBIENTE, PROMOVENDO MELHORIAS NA <br>
-        QUALIDADE DE VIDA E GARANTINDO A TOTAL SATISFAÇÃO DOS NOSSOS CLIENTES, <br>
-        ACCIONISTAS, ARCEIROS E COLABORADRES, DE FORMA RENTÁVEL E SUSTENTÁVEL.',
-    'slider-text2' => '<strong>VISÃO:</strong> ALCANÇAR A LIDERANÇA NO MERCADO ANGOLANO ATÉ 2018 NA ELABORAÇÃO <br> 
-    DE ESTUDOS E PROJECTOS E PRESTAÇÃO DE SERVIÇOS DE CONSULTORIA E FISCALIZAÇÃO<br>
-    COM O DESAFIO DE GARANTIR A MÁXIMA QUALIDADE E SATISFAÇÃO DOS NOSSOS CLIENTES.<br>
-    ',
+    'title-slider-fil' => 'FILOSOFÍA DA EMPRESA',
+    'sub-title-slider1' => 'MISSÃO:',
+    'content-slider1-fil-1' => 'PRESTAR SERVIÇOS DE PROJECTOS , CONSULTORIA E FISCALIZAÇÃO COM ',
+    'content-slider1-fil-2' => 'EFICIÊNCIA E QUALIDADE, RESPEITANDO O AMBIENTE, PROMOVENDO MELHORIAS NA ',
+    'content-slider1-fil-3' => 'QUALIDADE DE VIDA E GARANTINDO A TOTAL SATISFAÇÃO DOS NOSSOS CLIENTES, ',
+    'content-slider1-fil-4' => 'ACCIONISTAS, ARCEIROS E COLABORADRES, DE FORMA RENTÁVEL E SUSTENTÁVEL.',
+    'sub-title-slider2' => 'VISÃO:',
+    'content-slider2-fil-1' => 'ALCANÇAR A LIDERANÇA NO MERCADO ANGOLANO ATÉ 2018 NA ',
+    'content-slider2-fil-2' => 'ELABORAÇÃO DE ESTUDOS E PROJECTOS E PRESTAÇÃO DE SERVIÇOS ',
+    'content-slider2-fil-3' => 'DE CONSULTORIA E FISCALIZAÇÃO COM O DESAFIO DE GARANTIR A ',
+    'content-slider2-fil-4' => 'MÁXIMA QUALIDADE E SATISFAÇÃO DOS NOSSOS CLIENTES.',
+    'title-h3-fil' => 'Valores',
+    'sub-title-content1' => 'EXCELÊNCIA',
+    'sub-title-content2' => 'PESSOAS',
+    'sub-title-content3' => 'SSMA',
+    'sub-title-content4' => 'INTEGRIDADE',
+    'sub-title-content5' => 'RESPONSABILIDADE',
+    'sub-title-content6' => 'CLIENTE',
+    'content-content1' => 'Perseguimos incansávelmente, a excelência em tudo o que fazemos, todos os dias.',
+    'content-content2' => 'Trabalhamos em um ambiente que promove a inclusão, mudanças, novas ideias, respeito pelo indivíduo e oportunidades iguais de sucesso para todos.',
+    'content-content3' => 'Trabalhamos com segurança de maneira a proteger e promover a saúde e o bem-estar das pessoas e do meio ambiente.',
+    'content-content4' => 'O Alicerce da ITEM é a integridade dos seus funcionários. Somos abertos, francos e confiáveis no relacionamento com clientes, fornecedores, colegas, accionistas e comunidades onde actuamos.',
+    'content-content5' => 'Somos responsáveis – individualmente e em equipas – por nossos comportamentos, nossas acções e nossos resultados.',
+    'content-content6' => 'É uma pessoa que nos trás os desejos e necessidades. É nossa obrigação lidar com ele de maneira lucrativa para ele e para nós.',
 ];
