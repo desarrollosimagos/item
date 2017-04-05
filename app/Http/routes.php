@@ -24,13 +24,13 @@ Route::get('/customers_json', 'CustomersController@customers_json');
 Route::get('/number_json', 'PortofolioController@number_json');
 Route::get('/number_customers', 'CustomersController@number_customers');
 
+Route::get('/customers', 'CustomersController@page');
+
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/{pages?}', 'MainController@page');
 	
 	Route::get('/{pages?}/{id?}', 'MainController@view');
-	
-	//Route::get('/{pages?}', 'CustomersController@page');
 
     Route::get('lang/lang/{lang}', function ($lang) {
         session(['lang' => $lang]);

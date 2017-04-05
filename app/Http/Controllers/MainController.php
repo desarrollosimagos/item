@@ -1,15 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-
 use DB;
 use App\Quotation;
 use App\Page;
-
-
 class MainController extends Controller
 {
 	
@@ -28,7 +23,6 @@ class MainController extends Controller
             ->first();
 		
 		$template_info_route = 'main.portofolio_view';
-
 		if(!$site_info->status)
 			return redirect('/index');
 		
@@ -110,13 +104,11 @@ class MainController extends Controller
 			->join('categories','categories.id','=','portofolios.categorie_id')
 			->where('portofolios.id',$portofolio_id)
 			->first();
-
 		$next = DB::table('portofolios')
 			->where('id','<',$portofolio_id)
 			->limit(1)
 			->orderBy('id', 'desc')
 			->first();
-
 		$prev = DB::table('portofolios')
 			->where('id','>',$portofolio_id)
 			->limit(1)
@@ -127,7 +119,6 @@ class MainController extends Controller
 			->distinct()
 			->where('imagesportofolios.portofolio_id',$portofolio_id)
 			->get();
-
 		$meta_portofolio = DB::table('metaportofolios')
 			->distinct()
 			->where('metaportofolios.portofolio_id',$portofolio_id)
@@ -239,8 +230,9 @@ class MainController extends Controller
 		$contents = DB::table('contents')
 			->where('page_id', $page_info->id)
             ->get();
-		
+
 		$matches = null;
+
 		foreach($contents as $item){
             //echo var_dump($item);
             $tmp = null;
@@ -269,6 +261,9 @@ class MainController extends Controller
                 }
             }
 		}
+        //echo var_dump($tmp);
+        //exit;
+		
 		
 		$portofolios = DB::table('portofolios')
 			->distinct()
