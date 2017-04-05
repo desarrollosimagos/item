@@ -112,10 +112,12 @@
 @endsection
 
 @section('footer_panel_two')
+							<!--
 							<h4>Latest Tweets</h4>
 							<div id="tweet" class="twitter" data-plugin-tweets data-plugin-options="{'username': '', 'count': 2}">
 								<p>Please wait...</p>
-							</div>		
+							</div>	
+							-->	
 @endsection
 
 @section('footer_panel_tree')
