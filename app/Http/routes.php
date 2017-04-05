@@ -30,7 +30,7 @@ Route::group(['middleware' => ['web']], function () {
 	
 	Route::get('/{pages?}/{id?}', 'MainController@view');
 	
-	Route::get('/{pages?}', 'CustomersController@page');
+	//Route::get('/{pages?}', 'CustomersController@page');
 
     Route::get('lang/lang/{lang}', function ($lang) {
         session(['lang' => $lang]);
