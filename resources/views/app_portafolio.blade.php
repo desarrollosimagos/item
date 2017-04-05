@@ -84,33 +84,33 @@
 											<nav>
 												<ul id="mainNav" class="nav nav-pills">
 													<li class="dropdown">
-														<a href="/">Item </a>
+														<a href="/">{{ trans('main.item') }} </a>
 														<ul class="dropdown-menu">
 															<li class="dropdown-submenu">
-																<a href="empresa">Companhia</a>
+																<a href="{{ url('empresa') }}">{{ trans('main.empresa') }} </a>
 															</li>
 															<li class="dropdown-submenu">
-																<a href="filosofia-da-empresa">Filosofia de negócios</a>
+																<a href="{{ url('filosofia-da-empresa') }}">{{ trans('main.filosofia-da-empresa') }} </a>
 															</li>
 														</ul>
 													</li>
 													<li class="dropdown">
-														<a href="services">Serviços </a>
+														<a href="{{ url('services') }}">{{ trans('main.service') }}</a>
 													</li>
 													<li class="dropdown">
-														<a href="portofolio">Portafolio </a>
+														<a href="{{ url('portofolio') }}">{{ trans('main.portofolio') }}</a>
 													</li>
 													<li class="dropdown">
-														<a href="customers">Cliente </a>
+														<a href="{{ url('customers') }}">{{ trans('main.customer') }}</a>
 													</li>
 													<li class="dropdown">
-														<a href="contact">Contato </a>
+														<a href="{{ url('contact') }}">{{ trans('main.contact') }}</a>
 														<ul class="dropdown-menu">
 															<li class="dropdown-submenu">
-																<a href="trabalhe-connosco">Trabalhar com a gente</a>
+																<a href="{{ url('contact') }}">{{ trans('main.contact') }}</a>
 															</li>
 															<li class="dropdown-submenu">
-																<a href="contact">Contato</a>
+																<a href="{{ url('trabalhe-connosco') }}">{{ trans('main.trabalhe-connosco') }}</a>
 															</li>
 														</ul>
 													</li>
