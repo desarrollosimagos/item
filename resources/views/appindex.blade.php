@@ -131,7 +131,39 @@
 										@yield('social_menu')
 										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
 											<nav>
-												@yield('main_menu')
+												<ul id="mainNav" class="nav nav-pills">
+													<li class="dropdown">
+														<a href="/">Item </a>
+														<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																<a href="empresa">Companhia</a>
+															</li>
+															<li class="dropdown-submenu">
+																<a href="filosofia-da-empresa">Filosofia de negócios</a>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a href="services">Serviços </a>
+													</li>
+													<li class="dropdown">
+														<a href="portofolio">Portafolio </a>
+													</li>
+													<li class="dropdown">
+														<a href="customers">Cliente </a>
+													</li>
+													<li class="dropdown">
+														<a href="contact">Contato </a>
+														<ul class="dropdown-menu">
+															<li class="dropdown-submenu">
+																<a href="trabalhe-connosco">Trabalhar com a gente</a>
+															</li>
+															<li class="dropdown-submenu">
+																<a href="contact">Contato</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
 											</nav>
 										</div>
 									</div>
