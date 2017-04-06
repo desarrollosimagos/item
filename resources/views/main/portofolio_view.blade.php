@@ -107,31 +107,30 @@
 
 					<div class="row">
 						<div class="col-md-12">
-
-							<div class="owl-carousel owl-theme show-nav-hover mt-none" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': true, 'animateOut': 'fadeOut'}">
+							<!--<div class="owl-carousel owl-theme show-nav-hover mt-none" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': true, 'animateOut': 'fadeOut'}">-->
+							<div data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': true, 'animateOut': 'fadeOut'}">
 								@foreach ($image_portofolio as $key => $image)
 								<div>
 									<span class="img-thumbnail">
-										<img alt="" class="img-responsive" src="/images/images/{{ $image->file }}">
+										<img alt="" class="img-responsive" src="{{ url('images/images/'.$image->file) }}">
 									</span>
 								</div>
 								@endforeach
 							</div>
-
 						</div>
 					</div>
+					
 					<div class="row"> 
 						<div class="col-md-12">
 							<div class="portfolio-info pull-left"> 
 								<div class="row"> 
 									<div class="col-md-12 center"> 
-										<ul> <li> <a href="#" data-tooltip data-original-title="Like"><i class="fa fa-heart"></i>14</a> </li> <li> <i class="fa fa-calendar"></i> 01 January 2016 </li> <li> <i class="fa fa-tags"></i> <a href="#">Brand</a>, <a href="#">Design</a> </li> </ul> 
+										<ul> <li> <i class="fa fa-calendar"></i> {{ $portofolios->date }} </li> <li> <i class="fa fa-tags"></i> <a href="#">Brand</a>, <a href="#">Design</a> </li> </ul> 
 									</div> 
 								</div> 
 							</div>
 						</div> 
 					</div>
-					
 					
 					<div class="row"> 
 						<div class="col-md-7">
