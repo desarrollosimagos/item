@@ -82,9 +82,9 @@
 					<h2>Portfolio</h2>
 
 					<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
-						<li data-option-value="*" class="active"><a href="#">Show All</a></li>
+						<li data-option-value="*" class="active"><a href="#">{{ trans('portafolio.filter-all') }}</a></li>
 						@foreach ($categories as $key => $cat)
-						<li data-option-value=".{{ str_replace(' ', '', $cat->name)}}"><a href="#">{{ $cat->name}}</a></li>
+						<li data-option-value=".{{ str_replace(' ', '', $cat->name)}}"><a href="#">{{ trans($cat->ruta_lang) }}</a></li>
 						@endforeach
 					</ul>
 
@@ -130,7 +130,7 @@
 											<h4 class="heading-primary">{{ $port->title }}</h4>
 											<p class="mt-xlg">{{ $port->short_describe }}</p>
 
-											<a href="/{{$dir}}/{{ $port->id }}" class="btn btn-primary">Ver mas</a>
+											<a href="/{{$dir}}/{{ $port->id }}" class="btn btn-primary">{{ trans('portafolio.show-more') }}</a>
                                             {!! $port->html !!}
 											
 										</div>
