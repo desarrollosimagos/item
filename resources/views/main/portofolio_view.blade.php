@@ -123,9 +123,15 @@
 					<div class="row"> 
 						<div class="col-md-12">
 							<div class="portfolio-info pull-left"> 
-								<div class="row"> 
+								<div class="row">
 									<div class="col-md-12 center"> 
-										<ul> <li> <i class="fa fa-calendar"></i> {{ $portofolios->date }} </li> <li> <i class="fa fa-tags"></i> <a href="#">Brand</a>, <a href="#">Design</a> </li> </ul> 
+										<ul> <li> <i class="fa fa-calendar"></i> {{ $portofolios->date }} </li> <li> <i class="fa fa-tags"></i>
+										@foreach ($categories as $key => $cat)
+											@if ($cat->id == $portofolios->categorie_id)
+											{{$cat->name}}
+											@endif
+										@endforeach
+										</ul> 
 									</div> 
 								</div> 
 							</div>

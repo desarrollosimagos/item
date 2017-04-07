@@ -109,6 +109,10 @@ class MainController extends Controller
 			->join('categories','categories.id','=','portofolios.categorie_id')
 			->where('portofolios.id',$portofolio_id)
 			->first();
+			
+		$categories = DB::table('categories')
+            ->get();
+		
 		$next = DB::table('portofolios')
 			->where('id','<',$portofolio_id)
 			->limit(1)
@@ -138,6 +142,7 @@ class MainController extends Controller
 			'image_sites'=>$images,
 			'metas'=>$metas,
 			'submenu'=>$submenu,
+			'categories'=>$categories,
 			'portofolios'=>$portofolios,
 			'image_portofolio'=>$image_portofolio,
 			'meta_portofolio'=>$meta_portofolio,
