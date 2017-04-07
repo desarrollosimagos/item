@@ -2,10 +2,11 @@
 
 return [
 #MENU
+    'index' => 'Index',
     'item' => 'Item',
-    'contact' => 'Contato',
-	'customer' => 'Cliente',
-	'portofolio' => 'Portafolio',
+    'contact' => 'Contacto',
+	'customer' => 'Clientes',
+	'portofolio' => 'Portfolio',
 	'service' => 'Serviços',
 	'about'=>'About',
 	'primetitle'=>'Portugues <strong class="inverted">incredibly</strong> beautiful and fully responsive.',

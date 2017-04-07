@@ -64,14 +64,16 @@
 								<ul class="breadcrumb">
 									<li><a href="index">Inicio</a></li>
 									@if ($dir <> "")
-										<li class="active">{{$dir}}</li>
+										<!--<li class="active">{{$dir}}</li>-->
+										<li class="active">{{trans('main.portofolio')}}</li>
 									@endif
 								</ul>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<h1>{{$title}}</h1>
+								<!--<h1>{{$title}}</h1>-->
+								<h1>{{trans('main.portofolio')}}</h1>
 							</div>
 						</div>
 					</div>
