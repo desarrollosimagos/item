@@ -178,13 +178,13 @@
 		<script src="/vendor/vide/vide.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
-		<script src="/js/theme.js"></script>
+		<script src="/js/portafolio.theme.js"></script>
 		
 		<!-- Theme Custom -->
 		<script src="/js/custom.js"></script>
 		
 		<!-- Theme Initialization Files -->
-		<script src="/js/theme.init.js"></script>
+		<script src="/js/portafolio.theme.init.js"></script>
 
 		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
 		<script>

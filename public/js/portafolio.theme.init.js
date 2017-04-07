@@ -74,7 +74,7 @@
 }).apply(this, [jQuery]);
 
 // Carousel
-/*
+
 (function($) {
 
 	'use strict';
@@ -97,7 +97,7 @@
 	}
 
 }).apply(this, [jQuery]);
-*/
+
 // Chart.Circular
 (function($) {
 

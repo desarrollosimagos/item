@@ -107,8 +107,8 @@
 
 					<div class="row">
 						<div class="col-md-12">
-							<!--<div class="owl-carousel owl-theme show-nav-hover mt-none" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': true, 'animateOut': 'fadeOut'}">-->
-							<div data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': true, 'animateOut': 'fadeOut'}">
+							<div class="owl-carousel owl-theme show-nav-hover mt-none" id="imagen_porto" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': true, 'animateOut': 'fadeOut'}">
+							<!--<div data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': true, 'animateOut': 'fadeOut'}">-->
 								@foreach ($image_portofolio as $key => $image)
 								<div>
 									<span class="img-thumbnail">
@@ -211,6 +211,8 @@
 					</div>
 					
 				</div>
+				
+				
 @endsection
 
 @section('footer_title')
