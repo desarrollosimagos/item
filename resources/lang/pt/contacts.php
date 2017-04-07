@@ -7,6 +7,7 @@ return [
 	'label-asunto' => 'Assunto',
 	'label-message' => 'A sua mensagem *',
 	'button-send' => 'Enviar',
+	'nom-bandera' => 'Luanda-Angola',
 	'label-address1' => '<strong>Sede Luanda-Angola:</strong> Condomínio Mirantes do Talatona - Casa D20 – Talatona | Luanda – Angola',
 	'label-address2' => '<strong>Filial Malanje:</strong> Bairro Azul, Rua Comandante Dangereux',
 	'label-phone' => '<strong>Telf.:</strong> (+244) 222 019 224',
