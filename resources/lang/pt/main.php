@@ -16,7 +16,7 @@ return [
 	'filosofia-da-empresa' => 'Filosofia da Empresa',
 	'onde-estamos' => 'Onde estamos',
 	'fale-connosco' => 'Fale com a gente',
-	'trabalhe-connosco' => 'Trabalhar com a gente',
+	'trabalhe-connosco' => 'Trabalhe connosco',
 
 #SLIDER
 	'slider-text1' => '"As nossas áreas de actuação são, estudos projectos, consultoria e fiscalização.<br>

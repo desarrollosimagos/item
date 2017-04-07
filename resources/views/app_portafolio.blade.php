@@ -136,16 +136,16 @@
 			<footer id="footer">
 				<div class="container">
 					<div class="row">
-						<div class="footer-ribbon">
+						<!--<div class="footer-ribbon">
 							@yield('footer_title')
-						</div>
-						<div class="col-md-3">
+						</div>-->
+						<div class="col-md-4">
 							@yield('footer_panel_one')
 						</div>
-						<div class="col-md-3">
+						<!--<div class="col-md-3">
 							@yield('footer_panel_two')
-						</div>
-						<div class="col-md-4">
+						</div>-->
+						<div class="col-md-6">
 							@yield('footer_panel_tree')
 						</div>
 						<div class="col-md-2">

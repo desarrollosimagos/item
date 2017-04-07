@@ -118,9 +118,9 @@
 												<div class="row">
 													<div class="col-md-12 center">
 														<ul>
-															<li>
+															<!--<li>
 																<i class="fa fa-calendar"></i> {{ $port->date }}
-															</li>
+															</li>-->
 															<li>
 																<i class="fa fa-tags"></i> <a href="#">{{ $port->categorie }}</a></a>
 															</li>
