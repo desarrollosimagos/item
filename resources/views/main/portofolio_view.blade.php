@@ -161,7 +161,7 @@
 							<div class="row mb-xlg">
 								<div class="counters counters-sm">
 									<h5 class="mt-lg mb-sm">
-									Figures
+									{{trans('portafolio.figures')}}
 									</h5>
 									@foreach ($meta_portofolio as $key => $meta)
 										@if ($meta->value != NULL)

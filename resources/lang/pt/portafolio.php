@@ -31,7 +31,7 @@ return [
 	'customer' => '',
 	'local' => '',
 	'owner_work' => '',
-	'figures' => '',
+	'figures' => 'Figuras',
 
 ];
 
