@@ -212,7 +212,10 @@
 			//~ $(function () {
 				$('#enviar_mail').click(function(e){
 					e.preventDefault();
-					if ($('#newsletterEmail').val().trim() != ''){
+					// Expresion regular para validar el correo
+					var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+					
+					if ($('#newsletterEmail').val().trim() != '' && regex.test($('#newsletterEmail').val().trim())){
 						$.ajax({
 							method: "POST",
 							url: '/find_mail',
@@ -248,6 +251,9 @@
 						}).fail(function() {
 							console.log("error ajax");
 						});
+					}else{
+						alert("The email address is not valid...");
+						$('#newsletterEmail').focus();
 					}
 				})
 			//~ });

@@ -27,6 +27,8 @@ Route::get('/number_customers', 'CustomersController@number_customers');
 Route::post('/reg_mail', 'RegistrosController@registro_mails');
 Route::post('/find_mail', 'RegistrosController@find_mail');
 
+Route::post('/reg_message', 'RegistrosController@registro_message');
+
 //Route::get('/customers', 'CustomersController@page');
 
 Route::group(['middleware' => ['web']], function () {
