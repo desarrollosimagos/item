@@ -18,6 +18,9 @@
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- csrf-token Metas -->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 
 		<!-- Web Fonts  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
@@ -94,6 +97,59 @@
 			ga('send', 'pageview');
 		</script>
 		 -->
+		 
+		<script>
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+			
+			$(document).ready(function () {
+			//~ $(function () {
+				$('#enviar_mail').click(function(e){
+					e.preventDefault();
+					if ($('#newsletterEmail').val().trim() != ''){
+						$.ajax({
+							method: "POST",
+							url: '/find_mail',
+							data: $('#newsletterForm').serialize()
+						})
+						.done(function(data) {
+							if(data.error){
+								console.log(data.error);
+							} else {
+								if (parseInt(data) > 0){
+									alert("Your mail has already been registered");
+								}else{
+									$.ajax({
+										method: "POST",
+										url: '/reg_mail',
+										data: $('#newsletterForm').serialize()
+									})
+									.done(function(data) {
+										if(data.error){
+											console.log(data.error);
+										} else {
+											alert("Email registered...");
+											$('#newsletterEmail').val('');
+											$('#newsletterEmail').focus();
+										}
+										
+									}).fail(function() {
+										console.log("error ajax");
+									});
+								}
+							}
+							
+						}).fail(function() {
+							console.log("error ajax");
+						});
+					}
+				})
+			//~ });
+			});
+		</script>
 
 	</head>
 	<body>
@@ -209,8 +265,6 @@
 				</div>
 			</footer>
 		</div>
-
-		
 
 	</body>
 </html>
