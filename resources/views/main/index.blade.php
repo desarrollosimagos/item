@@ -85,11 +85,12 @@
 			
 								<div class="alert alert-danger hidden" id="newsletterError"></div>
 			
-								<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+								<form id="newsletterForm" method="POST">
 									<div class="input-group">
+										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<input class="form-control" placeholder="{{ trans($metas['newsletter-email']) }}" name="newsletterEmail" id="newsletterEmail" type="text">
 										<span class="input-group-btn">
-											<button class="btn btn-default" type="submit">{{ trans($metas['newsletter-button']) }}</button>
+											<button class="btn btn-default" id="enviar_mail" type="button">{{ trans($metas['newsletter-button']) }}</button>
 										</span>
 									</div>
 								</form>

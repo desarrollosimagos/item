@@ -241,7 +241,7 @@
 									<div class="input-group">
 										<input class="form-control" placeholder="{{ trans($metas['newsletter-email']) }}" name="newsletterEmail" id="newsletterEmail" type="text">
 										<span class="input-group-btn">
-											<button class="btn btn-default" type="submit">{{ trans($metas['newsletter-button']) }}</button>
+											<button class="btn btn-default" id="enviar_mail" type="button">{{ trans($metas['newsletter-button']) }}</button>
 										</span>
 									</div>
 								</form>
