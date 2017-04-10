@@ -273,7 +273,7 @@
 @endsection
 
 @section('footer_panel_four')
-							<h4>Follow Us</h4>
+							<h4>{{ trans($metas['social-title']) }}</h4>
 							<div class="social-icons">
 								<ul class="social-icons">
 									<li class="social-icons-facebook"><a href="http://www.facebook.com/{{ trans($metas['facebook-url']) }}" target="_blank" data-placement="bottom" rel="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
