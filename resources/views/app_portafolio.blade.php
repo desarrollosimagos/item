@@ -237,7 +237,8 @@
 										if(data.error){
 											console.log(data.error);
 										} else {
-											alert("Email registered...");
+											//~ alert("Email registered...");
+											$("#modal_reg_email3").modal('show');
 											$('#newsletterEmail').val('');
 											$('#newsletterEmail').focus();
 										}
@@ -259,6 +260,28 @@
 			//~ });
 			});
 		</script>
+		
+		<div id="modal_reg_email3" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
 
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<!--<h4 class="modal-title">Modal Header</h4>-->
+			  </div>
+			  <div class="modal-body">
+				<div class="alert alert-success">
+				  <strong>Success!</strong> Your email has been successfully registered.
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+
+		  </div>
+		</div>
+		
 	</body>
 </html>
