@@ -10,6 +10,7 @@ use App\Quotation;
 use App\Page;
 use App\Emails;
 use App\Message;
+use App\Postulation;
 
 
 class RegistrosController extends Controller
@@ -45,14 +46,50 @@ class RegistrosController extends Controller
     {
         // Validate the request...
 
-        $email = new Message;
+        $message = new Message;
 
-        $email->name = $request->name;
-        $email->email = $request->email;
-        $email->subject = $request->subject;
-        $email->message = $request->message;
+        $message->name = $request->name;
+        $message->email = $request->email;
+        $message->subject = $request->subject;
+        $message->message = $request->message;
 
-        $email->save();
+        $message->save();
+    }
+    
+    // *****************************************************************
+	// Método para registrar una nueva postulación de trabajo
+    public function registro_postulation(Request $request)
+    {
+        // Validate the request...
+
+        $postulation = new Postulation;
+        
+        $postulation->your_name = $request->your_name;
+        $postulation->your_email = $request->your_email;
+        $postulation->endereo = $request->endereo;
+        $postulation->provincia = $request->provincia;
+        $postulation->comuna = $request->comuna;
+        $postulation->passaporte = $request->passaporte;
+        $postulation->sexo = $request->sexo;
+        $postulation->estado_civil = $request->estado_civil;
+        $postulation->nascimento = $request->nascimento;
+        $postulation->nacionalidade = $request->nacionalidade;
+        $postulation->naturalidade = $request->naturalidade;
+        $postulation->telefone = $request->telefone;
+        //~ $postulation->anexar_cv = $request->anexar_cv;
+        $postulation->anexar_cv = $_FILES['anexar_cv']['name'];  // Usamos el array asociativo nativo de php $_FILES para obtener los atributos del archivo
+
+        $postulation->save();
+        
+        // Sección para el registro del archivo en la ruta establecida para tal fin (public/files)
+        $ruta = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
+        
+        if (move_uploaded_file($_FILES['anexar_cv']['tmp_name'], $ruta."/files/".$_FILES['anexar_cv']['name'])) {
+			echo "El fichero es válido y se subió con éxito.\n";
+		} else {
+			echo "¡Posible ataque de subida de ficheros!\n";
+		}
+        
     }
 	
 }

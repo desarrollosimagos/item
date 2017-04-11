@@ -29,6 +29,8 @@ Route::post('/find_mail', 'RegistrosController@find_mail');
 
 Route::post('/reg_message', 'RegistrosController@registro_message');
 
+Route::post('/reg_postulation', 'RegistrosController@registro_postulation');
+
 //Route::get('/customers', 'CustomersController@page');
 
 Route::group(['middleware' => ['web']], function () {
