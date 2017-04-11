@@ -73,5 +73,8 @@ return [
 	'contact-field-two' => '<strong>Telefone:</strong> +244 222 019 224</p>',
 	'contact-field-tree' => '<strong>Email:</strong> <a href="mailto:atendimento@itemao.com">atendimento@itemao.com</a></p>',
 	'copyrigh' => '© Copyright 2017 Item Engineering. Todos os direitos reservados.',
+	
+	#REGISTRO EMAIL
+	'mss-reg-email' => '<strong>Success!</strong> Your email has been successfully registered.',
 
 ];

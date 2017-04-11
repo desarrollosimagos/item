@@ -284,7 +284,7 @@
 			  </div>
 			  <div class="modal-body">
 				<div class="alert alert-success">
-				  <strong>Success!</strong> Your email has been successfully registered.
+				  {!!trans('main.mss-reg-email')!!}
 				</div>
 			  </div>
 			  <div class="modal-footer">

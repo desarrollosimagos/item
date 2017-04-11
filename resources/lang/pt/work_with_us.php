@@ -25,4 +25,8 @@ return [
 	'label-telefono' => 'Telefone*:',
 	'label-anexo' => 'Anexar CV*:',
 	'buttom-send' => 'Enviar',
+	
+	#REGISTRO POSTULACIÓN
+	'mss-reg-postulation' => '<strong>Success!</strong> You have registered successfully.',
+	
 ];

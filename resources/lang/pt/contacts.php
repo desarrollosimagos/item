@@ -14,4 +14,9 @@ return [
 	'label-phone-address' => '<strong>Email:</strong> <a href="mailto:mail@example.com">atendimento@itemao.com</a>',
 	'label-text-h3' => 'Para trabalhar conosco, <strong>clique aquí</strong>',
 	'button-work-with-us' => 'Trabalhe connosco',
+	
+	#REGISTRO MENSAJE
+	'mss-reg-mss' => '<strong>Success!</strong> Your message has been successfully registered.',
+	
+	
 ];
