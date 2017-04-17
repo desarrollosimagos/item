@@ -154,6 +154,20 @@
 						$('#newsletterEmail').focus();
 					}
 				})
+				
+				// Ejecutamos la busqueda al cambiar el valor del campo de búsqueda
+				$("#buscar").click(function (e) {
+					e.preventDefault();  // Para evitar que se envíe por defecto
+					
+					//~ alert("Buscando...");
+					
+					if ($('#q').val().trim() != ''){
+						//~ alert("Buscando");
+						url = "/find_portofolios?q="+$('#q').val().trim();
+						document.location=url;
+					}
+				});
+				
 			//~ });
 			});
 		</script>
@@ -173,11 +187,11 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-search hidden-xs">
-										<form id="searchForm" action="page-search-results.html" method="get">
+										<form id="searchForm" action="/find_portofolios" method="get">
 											<div class="input-group">
 												<input type="text" class="form-control" name="q" id="q" placeholder="Search..." required>
 												<span class="input-group-btn">
-													<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+													<button class="btn btn-default" id="buscar" type="button"><i class="fa fa-search"></i></button>
 												</span>
 											</div>
 										</form>
