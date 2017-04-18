@@ -24,15 +24,11 @@ return [
 		excelência. Possuímos especialidades da arquitectura e engenharia. Quadros técnicos<br>
 		Com o domínio das diferentes especialidades da arquitectura e engenharia.”',
 
-	'slider1-text1' => '"VISUALIZAMOS AS IDEIAS DOS NOSSOS CLIENTES<br>
-		E TRADUZIMO-LAS EM PROJECTOS PERSONALIZADOS."',
+	'slider1-text1' => '"visualizamos as ideias dos nossos clientes e traduzimo-las em projectos personalizados."',
 
-	'slider2-text1' => '“NOSSAS EQUIPAS MULTIDISCIPLINARES SÃO <br>
-		EXPERIENTES E ESPECIALIZADAS NAS DIFERENTES<br>
-		COMPETÊNCIAS TÉCNICAS DA ARQUITECTURA E <br>
-		ENGENHARIA DIMENSIONADAS E ORGANIZADAS DE<br>
-		ACORDO COM AS CARACTERÍSTICAS DO SERVIÇO <br>
-		A PRESTAR E DOS REQUISITOS DO CLIENTE”',
+	'slider2-text1' => '“nossas equipas multidisciplinares são experientes e especializadas nas diferentes<br>
+		competências técnicas da arquitectura e engenharia dimensionadas e organizadas de<br>
+		acordo com as características do serviço a prestar e dos requisitos do cliente”',
 
 #CONTENIDO
 	'last-project' => 'Últimas <strong>Projectos</strong>',
