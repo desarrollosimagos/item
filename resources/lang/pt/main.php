@@ -31,6 +31,7 @@ return [
 	'slider2-text3' => 'acordo com as características do serviço a prestar e dos requisitos do cliente”',
 
 #CONTENIDO
+	'home-dir-title' => 'Inicio',
 	'last-project' => 'Últimas <strong>Projectos</strong>',
 	'who-we-are' => '<strong>Quem</strong> Somos',
 	'who-we-are-text1' => 'A ITEM É UMA EMPRESA DE DIREITO ANGOLANO, COM SEDE EM LUANDA E FILIAL EM MALANJE.
@@ -68,6 +69,7 @@ return [
 	'contact-field-one' => '<strong>Endereço:</strong> Condomínio Mirantes do Talatona Casa D20 – Talatona | Luanda – Angola</p>',
 	'contact-field-two' => '<strong>Telefone:</strong> +244 222 019 224</p>',
 	'contact-field-tree' => '<strong>Email:</strong> <a href="mailto:atendimento@itemao.com">atendimento@itemao.com</a></p>',
+	'social-tittle' => 'Redes Sociales',
 	'copyrigh' => '© Copyright 2017 Item Engineering. Todos os direitos reservados.',
 	
 	#REGISTRO EMAIL
