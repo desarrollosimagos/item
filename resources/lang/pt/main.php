@@ -19,16 +19,16 @@ return [
 	'trabalhe-connosco' => 'Trabalhe connosco',
 
 #SLIDER
-	'slider-text1' => '"As nossas áreas de actuação são, estudos projectos, consultoria e fiscalização.<br>
-		Temos as competências e experiências necessárias para garantir um trabalho de<br>
-		excelência. Possuímos especialidades da arquitectura e engenharia. Quadros técnicos<br>
-		Com o domínio das diferentes especialidades da arquitectura e engenharia.”',
+	'slider-text1' => '"As nossas áreas de actuação são, estudos projectos, consultoria e fiscalização.',
+	'slider-text2' => 'Temos as competências e experiências necessárias para garantir um trabalho de',
+	'slider-text3' => 'excelência. Possuímos especialidades da arquitectura e engenharia. Quadros técnicos',
+	'slider-text4' => 'Com o domínio das diferentes especialidades da arquitectura e engenharia.”',
 
 	'slider1-text1' => '"visualizamos as ideias dos nossos clientes e traduzimo-las em projectos personalizados."',
 
-	'slider2-text1' => '“nossas equipas multidisciplinares são experientes e especializadas nas diferentes<br>
-		competências técnicas da arquitectura e engenharia dimensionadas e organizadas de<br>
-		acordo com as características do serviço a prestar e dos requisitos do cliente”',
+	'slider2-text1' => '“nossas equipas multidisciplinares são experientes e especializadas nas diferentes',
+	'slider2-text2' => 'competências técnicas da arquitectura e engenharia dimensionadas e organizadas de',
+	'slider2-text3' => 'acordo com as características do serviço a prestar e dos requisitos do cliente”',
 
 #CONTENIDO
 	'last-project' => 'Últimas <strong>Projectos</strong>',
