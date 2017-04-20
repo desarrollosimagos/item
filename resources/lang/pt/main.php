@@ -1,6 +1,9 @@
 <?php
 
 return [
+#BUSCADOR
+	'searcher' => 'Pesquisar aqui...',
+	
 #MENU
     'index' => 'Index',
     'item' => 'Item',

@@ -66,7 +66,7 @@
 									<div class="header-search hidden-xs">
 										<form id="searchForm" action="/find_portofolios" method="get">
 											<div class="input-group">
-												<input type="text" class="form-control" name="q" id="q" placeholder="Search..." required>
+												<input type="text" class="form-control" name="q" id="q" placeholder="{{ trans('main.searcher') }}" required>
 												<span class="input-group-btn">
 													<button class="btn btn-default" id="buscar" type="button"><i class="fa fa-search"></i></button>
 												</span>
