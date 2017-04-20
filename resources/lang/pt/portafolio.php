@@ -9,6 +9,7 @@ return [
 	'filter-eep' => 'ESTUDOS E PROJECTOS',
 	'filter-fis' => 'FISCALIZAÇÃO',
 	'show-more' => 'Leia Mais',
+	'result-empty' => 'Nenhum resultado foi encontrado.',
 #PAGE
 
 	'description' => 'Descrição',

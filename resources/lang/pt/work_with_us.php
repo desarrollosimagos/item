@@ -1,6 +1,12 @@
 <?php
 
 return [
+	#HEADER
+	'home-dir-title' => 'Inicio',
+	'page-dir-title' => 'Trabalhe connosco',
+	'title' => 'Trabalhe connosco',
+	
+	#FORMULARIO
 	'text-presentation' => 'Para entrar em contato connosco, preencha o formulário abaixo ou ligue para o número:',
 	'text-title' => 'Dados Pessoais',
 	'label-name' => 'Nome: *',
@@ -26,7 +32,7 @@ return [
 	'label-anexo' => 'Anexar CV*:',
 	'buttom-send' => 'Enviar',
 	
-	#REGISTRO POSTULACIÓN
+	#ALERTAS REGISTRO POSTULACIÓN
 	'mss-alert1-postulation' => '<strong>Atenção!</strong> Preencha o campo de nome.',
 	'mss-alert2-postulation' => '<strong>Atenção!</strong> Preencha o campo de e-mail.',
 	'mss-alert3-postulation' => '<strong>Atenção!</strong> O endereço de e-mail não é válido.',
