@@ -97,9 +97,11 @@
 
 					<hr>
 
-					<div class="row">
-
+					<div class="row">	
 						<div class="sort-destination-loader sort-destination-loader-showing">
+							@if(count($portofolios) == 0)
+							<span class="alert alert-warning">{{trans('portafolio.result-empty')}}</span>
+							@endif					
 							<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
 								@foreach ($portofolios as $key => $port)
 								<li class="col-md-12 isotope-item mt-xl {{ str_replace(' ', '', $port->categorie) }}">

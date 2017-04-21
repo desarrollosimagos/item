@@ -66,7 +66,7 @@
 									<div class="header-search hidden-xs">
 										<form id="searchForm" action="/find_portofolios" method="get">
 											<div class="input-group">
-												<input type="text" class="form-control" name="q" id="q" placeholder="Search..." required>
+												<input type="text" class="form-control" name="q" id="q" placeholder="{{ trans('main.searcher') }}" required>
 												<span class="input-group-btn">
 													<button class="btn btn-default" id="buscar" type="button"><i class="fa fa-search"></i></button>
 												</span>
@@ -226,7 +226,10 @@
 								console.log(data.error);
 							} else {
 								if (parseInt(data) > 0){
-									alert("Your mail has already been registered");
+									//~ alert("Your mail has already been registered");
+									$("#modal_reg_email3").modal('show');
+									$("#contenido_modal3").addClass("alert-danger");
+									$("#contenido_modal3").html("{!!trans('main.mss-alert2-email')!!}");
 								}else{
 									$.ajax({
 										method: "POST",
@@ -239,6 +242,9 @@
 										} else {
 											//~ alert("Email registered...");
 											$("#modal_reg_email3").modal('show');
+											$("#contenido_modal3").removeClass("alert-danger");
+											$("#contenido_modal3").addClass("alert-success");
+											$("#contenido_modal3").html("{!!trans('main.mss-reg-email')!!}");
 											$('#newsletterEmail').val('');
 											$('#newsletterEmail').focus();
 										}
@@ -253,7 +259,10 @@
 							console.log("error ajax");
 						});
 					}else{
-						alert("The email address is not valid...");
+						//~ alert("The email address is not valid...");
+						$("#modal_reg_email3").modal('show');
+						$("#contenido_modal3").addClass("alert-danger");
+						$("#contenido_modal3").html("{!!trans('main.mss-alert1-email')!!}");
 						$('#newsletterEmail').focus();
 					}
 				})
@@ -285,8 +294,8 @@
 				<!--<h4 class="modal-title">Modal Header</h4>-->
 			  </div>
 			  <div class="modal-body">
-				<div class="alert alert-success">
-				  {!!trans('main.mss-reg-email')!!}
+				<div class="alert alert-success" id="contenido_modal3">
+				  
 				</div>
 			  </div>
 			  <div class="modal-footer">

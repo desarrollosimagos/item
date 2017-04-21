@@ -1,6 +1,9 @@
 <?php
 
 return [
+#BUSCADOR
+	'searcher' => 'Pesquisar aqui...',
+	
 #MENU
     'index' => 'Index',
     'item' => 'Item',
@@ -73,6 +76,8 @@ return [
 	'copyrigh' => '© Copyright 2017 Item Engineering. Todos os direitos reservados.',
 	
 	#REGISTRO EMAIL
-	'mss-reg-email' => '<strong>Success!</strong> Your email has been successfully registered.',
+	'mss-reg-email' => '<strong>Sucesso!</strong> Seu e-mail foi registrado com sucesso.',
+	'mss-alert1-email' => '<strong>Atenção!</strong> O endereço de e-mail não é válido.',
+	'mss-alert2-email' => '<strong>Atenção!</strong> Seu e-mail já foi registrado.',
 
 ];

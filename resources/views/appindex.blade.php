@@ -123,7 +123,10 @@
 								console.log(data.error);
 							} else {
 								if (parseInt(data) > 0){
-									alert("Your mail has already been registered");
+									//~ alert("Your mail has already been registered");
+									$("#modal_reg_email2").modal('show');
+									$("#contenido_modal2").addClass("alert-danger");
+									$("#contenido_modal2").html("{!!trans('main.mss-alert2-email')!!}");
 								}else{
 									$.ajax({
 										method: "POST",
@@ -136,6 +139,9 @@
 										} else {
 											//~ alert("Email registered...");
 											$("#modal_reg_email2").modal('show');
+											$("#contenido_modal2").removeClass("alert-danger");
+											$("#contenido_modal2").addClass("alert-success");
+											$("#contenido_modal2").html("{!!trans('main.mss-reg-email')!!}");
 											$('#newsletterEmail').val('');
 											$('#newsletterEmail').focus();
 										}
@@ -150,12 +156,15 @@
 							console.log("error ajax");
 						});
 					}else{
-						alert("The email address is not valid...");
+						//~ alert("The email address is not valid...");
+						$("#modal_reg_email2").modal('show');
+						$("#contenido_modal2").addClass("alert-danger");
+						$("#contenido_modal2").html("{!!trans('main.mss-alert1-email')!!}");
 						$('#newsletterEmail').focus();
 					}
 				})
 				
-				// Ejecutamos la busqueda al cambiar el valor del campo de búsqueda
+				// Ejecutamos la búsqueda al cambiar el valor del campo de búsqueda
 				$("#buscar").click(function (e) {
 					e.preventDefault();  // Para evitar que se envíe por defecto
 					
@@ -189,7 +198,7 @@
 									<div class="header-search hidden-xs">
 										<form id="searchForm" action="/find_portofolios" method="get">
 											<div class="input-group">
-												<input type="text" class="form-control" name="q" id="q" placeholder="Search..." required>
+												<input type="text" class="form-control" name="q" id="q" placeholder="{{ trans('main.searcher') }}" required>
 												<span class="input-group-btn">
 													<button class="btn btn-default" id="buscar" type="button"><i class="fa fa-search"></i></button>
 												</span>
@@ -297,8 +306,8 @@
 				<!--<h4 class="modal-title">Modal Header</h4>-->
 			  </div>
 			  <div class="modal-body">
-				<div class="alert alert-success">
-				  {!!trans('main.mss-reg-email')!!}
+				<div class="alert alert-success" id="contenido_modal2">
+				  
 				</div>
 			  </div>
 			  <div class="modal-footer">
