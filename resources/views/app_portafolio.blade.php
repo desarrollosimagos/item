@@ -86,7 +86,7 @@
 										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
 											<i class="fa fa-bars"></i>
 										</button>
-										@yield('social_menu')
+										<!--@yield('social_menu')-->
 										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
 											<nav>
 												<ul id="mainNav" class="nav nav-pills">
@@ -142,7 +142,7 @@
 						<!--<div class="footer-ribbon">
 							@yield('footer_title')
 						</div>-->
-						<div class="col-md-4">
+						<div class="col-md-6">
 							@yield('footer_panel_one')
 						</div>
 						<!--<div class="col-md-3">
@@ -151,9 +151,9 @@
 						<div class="col-md-6">
 							@yield('footer_panel_tree')
 						</div>
-						<div class="col-md-2">
+						<!--<div class="col-md-2">
 							@yield('footer_panel_four')
-						</div>
+						</div>-->
 					</div>
 				</div>
 				<div class="footer-copyright">
