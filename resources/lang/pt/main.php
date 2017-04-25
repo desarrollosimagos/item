@@ -68,7 +68,7 @@ return [
 	'newsletter-description' => 'Digite seu e-mail e assine nosso boletim informativo.',
 	'newsletter-email' => 'Correio Eletrônico',
 	'newsletter-button' => 'Subscrever',
-	'contact-title' => 'Contato',
+	'contact-title' => 'Contacto',
 	'contact-field-one' => '<strong>Endereço:</strong> Condomínio Mirantes do Talatona Casa D20 – Talatona | Luanda – Angola</p>',
 	'contact-field-two' => '<strong>Telefone:</strong> +244 222 019 224</p>',
 	'contact-field-tree' => '<strong>Email:</strong> <a href="mailto:atendimento@itemao.com">atendimento@itemao.com</a></p>',
