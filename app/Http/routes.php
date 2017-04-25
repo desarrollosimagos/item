@@ -44,7 +44,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/{pages?}/{id?}', 'MainController@view');
 
     Route::get('lang/lang/{lang}', function ($lang) {
-        session(['lang' => $lang]);
+        //~ session(['lang' => $lang]);
+        session(['lang' => 'pt']);
         return \Redirect::back();
     });
     
